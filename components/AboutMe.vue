@@ -1,6 +1,6 @@
 <template>
   <div class="pt-6">
-    <p v-for="text in aboutMeText" :key="text.text" v-html="text.text" class="font-sans text-lg lg:text-3xl"></p>
+    <p v-for="text in aboutMeText" :key="text.text" v-html="text.text" class="font-sans text-lg lg:text-3xl" />
   </div>
 </template>
 
