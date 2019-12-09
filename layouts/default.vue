@@ -1,16 +1,19 @@
 <template>
-  <div>
-    <appNavigation />
-    <nuxt />
+  <div class="flex flex-col min-h-screen">
+    <app-navigation />
+    <nuxt class="flex-1" />
+    <app-footer />
   </div>
 </template>
 
 <script>
 import Navigation from '../components/Navigation'
+import Footer from '../components/Footer'
 
 export default {
   components: {
-    appNavigation: Navigation
+    appNavigation: Navigation,
+    appFooter: Footer
   }
 }
 </script>
