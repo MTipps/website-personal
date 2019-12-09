@@ -1,10 +1,14 @@
 <template>
-  <footer>
-    <div>
-      <p>Living, learning, & leveling up</p>
-      <p>one day at a time.</p>
+  <footer class="bg-purple-900 p-6 text-center">
+    <div class="mb-6">
+      <p
+        v-for="phrase in catchphrase"
+        :key="phrase.text"
+        class="font-sans font-bold text-xl text-white">
+        {{ phrase.text }}
+      </p>
     </div>
-    <div>
+    <div class="flex justify-center mb-6">
       <p>LinkedIn</p>
       <p>Github</p>
       <p>StackOverflow</p>
@@ -12,14 +16,22 @@
       <p>Email</p>
     </div>
     <div>
-      <p>Created by me &#169; twenty nineteen</p>
+      <p class="font-sans text-base text-white">Created by me &#169; {{ new Date().getFullYear() }}</p>
     </div>
   </footer>
 </template>
 
 <script>
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  data () {
+    return {
+      catchphrase: [
+        { text: 'Living, learning, & leveling up' },
+        { text: 'one day at a time.' }
+      ]
+    }
+  }
 }
 </script>
 
