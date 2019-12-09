@@ -4,7 +4,8 @@
       <p
         v-for="phrase in catchphrase"
         :key="phrase.text"
-        class="font-sans font-bold text-xl text-white">
+        class="font-sans font-bold text-xl text-white"
+      >
         {{ phrase.text }}
       </p>
     </div>
@@ -13,12 +14,15 @@
         v-for="social in socialMedia"
         :key="social.link"
         :href="social.link"
-        class="pr-6"
         v-html="social.svg"
-        target="_blank"></a>
+        class="pr-6"
+        target="_blank"
+      />
     </div>
     <div>
-      <p class="font-sans text-base text-white">Created by me &#169; {{ new Date().getFullYear() }}</p>
+      <p class="font-sans text-base text-white">
+        Created by me &#169; {{ new Date().getFullYear() }}
+      </p>
     </div>
   </footer>
 </template>
