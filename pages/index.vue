@@ -1,5 +1,3 @@
-<!-- TODO: Add smaller margin for mobile -->
-
 <template>
   <div class="mx-6 lg:mx-16">
     <app-about-me />
