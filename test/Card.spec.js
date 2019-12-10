@@ -1,11 +1,18 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
-import Skills from '@/components/Skills.vue'
+import Card from '@/components/Card.vue'
 
 let wrapper
 let store
 let state
 const localVue = createLocalVue()
+const image = ''
+const title = ''
+const description = ''
+const techUsed = []
+const link = ''
+const linkText = ''
+
 localVue.use(Vuex)
 
 beforeEach(() => {
@@ -25,9 +32,17 @@ beforeEach(() => {
 
   store = new Vuex.Store({ state })
 
-  wrapper = mount(Skills, {
+  wrapper = mount(Card, {
     store,
-    localVue
+    localVue,
+    propsData: {
+      image,
+      title,
+      description,
+      techUsed,
+      link,
+      linkText
+    }
   })
 })
 
@@ -35,8 +50,22 @@ afterEach(() => {
   wrapper.destroy()
 })
 
-describe('Skills', () => {
+describe('Card', () => {
   test('is a Vue instance', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
+  })
+
+  test('is tech stack icons with values', () => {
+    const iconsNameArray = [ 'HTML' ]
+    const iconsArray = wrapper.vm.getTechStackIcons(iconsNameArray)
+
+    expect(iconsArray[0]).toBeTruthy()
+  })
+
+  test('is tech stack icons empty', () => {
+    const iconsNameArray = []
+    const iconsArray = wrapper.vm.getTechStackIcons(iconsNameArray)
+
+    expect(iconsArray[0]).toBeFalsy()
   })
 })
