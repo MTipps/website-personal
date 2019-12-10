@@ -9,7 +9,7 @@
         {{ description }}
       </p>
       <div class="tech-stack flex flex-wrap justify-center">
-        <div v-for="tech in techUsed" :key="tech.techName" v-html="tech.techIcon" class="pr-6 pt-6" />
+        <div v-for="tech in getTechStackIcons(techUsed)" :key="tech.techName" v-html="tech.techIcon" class="pr-6 pt-6" />
       </div>
       <a :href="link" class="block w-full font-sans font-bold text-md text-white bg-pink-600 hover:bg-purple-600 py-4 mt-6 rounded-lg">{{ linkText }}</a>
     </div>
@@ -43,6 +43,26 @@ export default {
     linkText: {
       type: String,
       required: true
+    }
+  },
+  data () {
+    return {
+      techStack: this.$store.state.techStackData.techStack
+    }
+  },
+  methods: {
+    getTechStackIcons (iconsToGetArray) {
+      const iconsArray = []
+
+      this.techStack.forEach(function (tech) {
+        iconsToGetArray.forEach(function (iconName) {
+          if (iconName === tech.techName) {
+            iconsArray.push(tech)
+          }
+        })
+      })
+
+      return iconsArray
     }
   }
 }
