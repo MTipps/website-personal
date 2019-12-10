@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'RecentWorkCard',
+  name: 'Card',
   props: {
     image: {
       type: String,

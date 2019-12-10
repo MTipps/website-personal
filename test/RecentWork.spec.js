@@ -1,6 +1,6 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
-import Skills from '@/components/Skills.vue'
+import RecentWork from '@/components/RecentWork.vue'
 
 let wrapper
 let store
@@ -10,6 +10,17 @@ localVue.use(Vuex)
 
 beforeEach(() => {
   state = {
+    recentWorkData: {
+      recentWorks: [
+        {
+          image: 'https://via.placeholder.com/728x90',
+          title: 'Test Company Name',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rutrum felis dui, congue mollis massa fermentum eget. Etiam sed suscipit sapien. Integer imperdiet odio eget arcu condimentum, sed viverra',
+          techUsed: [ 'HTML', 'CSS', 'Javascript', 'Typescript' ],
+          link: 'Link to Site'
+        }
+      ]
+    },
     techStackData: {
       techStack: [
         {
@@ -25,7 +36,7 @@ beforeEach(() => {
 
   store = new Vuex.Store({ state })
 
-  wrapper = mount(Skills, {
+  wrapper = mount(RecentWork, {
     store,
     localVue
   })
@@ -35,7 +46,7 @@ afterEach(() => {
   wrapper.destroy()
 })
 
-describe('Skills', () => {
+describe('RecentWork', () => {
   test('is a Vue instance', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
