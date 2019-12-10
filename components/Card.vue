@@ -4,7 +4,7 @@
     <div class="p-6">
       <p class="font-sans font-bold text-lg text-pink-600 pb-6">{{ title }}</p>
       <p class="font-sans text-base text-gray-800 pb-6">{{ description }}</p>
-      <div class="flex flex-wrap justify-center">
+      <div class="tech-stack flex flex-wrap justify-center">
         <div v-for="tech in techUsed" :key="tech.techName" v-html="tech.techIcon" class="pr-6 pt-6" />
       </div>
       <a :href="link" class="block w-full font-sans font-bold text-md text-white bg-pink-600 hover:bg-purple-600 py-4 mt-6 rounded-lg">{{ linkText }}</a>
@@ -45,5 +45,7 @@ export default {
 </script>
 
 <style scoped>
-
+.tech-stack {
+  min-height: 4rem;
+}
 </style>

@@ -11,7 +11,7 @@ export const state = () => ({
       image: 'https://via.placeholder.com/728x90',
       title: 'Acme Company',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rutrum felis dui, congue mollis massa fermentum eget. Etiam sed suscipit sapien. Integer imperdiet odio eget arcu condimentum, sed viverra',
-      techUsed: [ 'React', 'SASS' ],
+      techUsed: [],
       link: 'Link to Site1'
     },
     {
