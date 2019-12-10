@@ -70,6 +70,6 @@ export default {
 
 <style scoped>
 .tech-stack {
-  min-height: 4rem;
+  min-height: 5rem;
 }
 </style>
