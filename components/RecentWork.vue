@@ -8,7 +8,7 @@
         :image="recentWork.image"
         :title="recentWork.title"
         :description="recentWork.description"
-        :tech-used="recentWork.techUsed"
+        :tech-used="getTechStackIcons(recentWork.techUsed)"
         :link="recentWork.link"
         link-text="Visit Site"
       />
@@ -30,7 +30,23 @@ export default {
     return {
       header: 'Recent Work',
       subHeader: 'Here are a few things that I have done:',
-      recentWorks: this.$store.state.recentWorkData.recentWorks
+      recentWorks: this.$store.state.recentWorkData.recentWorks,
+      techStack: this.$store.state.techStackData.techStack
+    }
+  },
+  methods: {
+    getTechStackIcons (iconsToGetArray) {
+      const iconsArray = []
+
+      this.techStack.forEach(function (tech) {
+        iconsToGetArray.forEach(function (iconName) {
+          if (iconName === tech.techName) {
+            iconsArray.push(tech)
+          }
+        })
+      })
+
+      return iconsArray
     }
   }
 }
