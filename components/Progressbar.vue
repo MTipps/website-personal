@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="relative bg-gray-800 w-64 h-5">
+    <div class="relative bg-gray-800 w-40 sm:w-64 h-5">
       <div class="absolute bg-pink-600 h-5" :style="'width: ' + progressInnerWidth + '%;'"></div>
     </div>
   </div>
