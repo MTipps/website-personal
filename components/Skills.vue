@@ -1,11 +1,6 @@
 <template>
   <div class="pt-6 text-center">
-    <p class="font-sans font-bold text-4xl text-pink-600">
-      {{ header }}
-    </p>
-    <p class="font-sans text-lg">
-      {{ subHeader }}
-    </p>
+    <app-section-heading :header="header" :sub-header="subHeader" />
     <div class="pt-6 flex flex-wrap justify-center">
       <div v-for="skill in skills" :key="skill.skillName" class="flex justify-start items-center pb-6 pr-10">
         <div v-html="skill.skillIcon" />
@@ -16,11 +11,13 @@
 </template>
 
 <script>
+import SectionHeading from './SectionHeading'
 import Progressbar from './Progressbar'
 
 export default {
   name: 'Skills',
   components: {
+    appSectionHeading: SectionHeading,
     appProgressBar: Progressbar
   },
   data () {
