@@ -2,6 +2,9 @@
 
 > Megan Tipps, freelance front-end web developer
 
+## Framework
+A typical NuxtJS setup, for more information read the [Nuxt.js docs](https://nuxtjs.org)
+
 ## Build Setup
 
 ``` bash
@@ -19,4 +22,8 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Test
+Jest is used as the testing framework, for more information read the [Jest docs](https://jestjs.io/docs/en/getting-started)
+
+## Deployment
+Coming soon
