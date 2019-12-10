@@ -1,10 +1,12 @@
 <template>
-  <div>
-    <p>{{ image }}</p>
-    <p>{{ title }}</p>
-    <p>{{ description }}</p>
-    <p>{{ techUsed }}</p>
-    <a :href="link">Visit Site</a>
+  <div class="rounded-lg shadow-lg max-w-sm mr-0 sm:mr-10 mb-6">
+    <img :src="image" alt="" class="rounded-t-lg object-cover h-48">
+    <div class="p-6">
+      <p class="font-sans font-bold text-lg text-pink-600 pb-6">{{ title }}</p>
+      <p class="font-sans text-base text-gray-800 pb-6">{{ description }}</p>
+      <p class="pb-6">{{ techUsed }}</p>
+      <a :href="link" class="block w-full font-sans font-bold text-md text-white bg-pink-600 hover:bg-purple-600 py-4 rounded-lg">{{ linkText }}</a>
+    </div>
   </div>
 </template>
 
@@ -30,6 +32,10 @@ export default {
       default: ''
     },
     link: {
+      type: String,
+      required: true
+    },
+    linkText: {
       type: String,
       required: true
     }

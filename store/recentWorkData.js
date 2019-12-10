@@ -1,23 +1,23 @@
 export const state = () => ({
   recentWorks: [
     {
-      image: 'logo',
-      title: 'company name',
-      description: 'description',
+      image: 'https://via.placeholder.com/728x90',
+      title: 'Test Company Name',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rutrum felis dui, congue mollis massa fermentum eget. Etiam sed suscipit sapien. Integer imperdiet odio eget arcu condimentum, sed viverra',
       techUsed: 'list of tech used',
       link: 'Link to Site'
     },
     {
-      image: 'logo1',
-      title: 'company name1',
-      description: 'description1',
+      image: 'https://via.placeholder.com/728x90',
+      title: 'Acme Company',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rutrum felis dui, congue mollis massa fermentum eget. Etiam sed suscipit sapien. Integer imperdiet odio eget arcu condimentum, sed viverra',
       techUsed: 'list of tech used1',
       link: 'Link to Site1'
     },
     {
-      image: 'logo2',
-      title: 'company name2',
-      description: 'description2',
+      image: 'https://via.placeholder.com/728x90',
+      title: 'ABC Corporation',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rutrum felis dui, congue mollis massa fermentum eget. Etiam sed suscipit sapien. Integer imperdiet odio eget arcu condimentum, sed viverra',
       techUsed: 'list of tech used2',
       link: 'Link to Site2'
     }

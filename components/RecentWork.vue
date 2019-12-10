@@ -1,7 +1,7 @@
 <template>
   <div class="pt-6 text-center">
     <app-section-heading :header="header" :sub-header="subHeader" />
-    <div class="flex flex-wrap justify-center">
+    <div class="flex flex-wrap justify-center pt-6">
       <app-card
         v-for="recentWork in recentWorks"
         :key="recentWork.title"
@@ -10,6 +10,7 @@
         :description="recentWork.description"
         :tech-used="recentWork.techUsed"
         :link="recentWork.link"
+        link-text="Visit Site"
       />
     </div>
   </div>
@@ -28,7 +29,7 @@ export default {
   data () {
     return {
       header: 'Recent Work',
-      subHeader: 'Here are a view things that I have done:',
+      subHeader: 'Here are a few things that I have done:',
       recentWorks: this.$store.state.recentWorkData.recentWorks
     }
   }
