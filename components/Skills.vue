@@ -1,11 +1,15 @@
 <template>
   <div class="pt-6 text-center">
-    <p class="font-sans font-bold text-4xl text-pink-600">{{ header }}</p>
-    <p class="font-sans text-lg">{{ subHeader }}</p>
+    <p class="font-sans font-bold text-4xl text-pink-600">
+      {{ header }}
+    </p>
+    <p class="font-sans text-lg">
+      {{ subHeader }}
+    </p>
     <div class="pt-6 flex flex-wrap justify-center">
       <div v-for="skill in skills" :key="skill.skillName" class="flex justify-start items-center pb-6 pr-10">
-        <div v-html="skill.skillIcon"></div>
-        <app-progress-bar class="pl-6" :progress-inner-width="skill.skillProgress" />
+        <div v-html="skill.skillIcon" />
+        <app-progress-bar :progress-inner-width="skill.skillProgress" class="pl-6" />
       </div>
     </div>
   </div>
