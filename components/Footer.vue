@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-purple-900 p-6 text-center">
+  <footer class="bg-purple-900 p-6 mt-6 text-center">
     <div class="mb-6">
       <p
         v-for="phrase in catchphrase"

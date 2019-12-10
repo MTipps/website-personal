@@ -3,6 +3,7 @@
     <app-about-me />
     <app-skills />
     <app-recent-work />
+    <app-blog />
   </div>
 </template>
 
@@ -10,12 +11,14 @@
 import AboutMe from '../components/AboutMe'
 import Skills from '../components/Skills'
 import RecentWork from '../components/RecentWork'
+import Blog from '../components/Blog'
 
 export default {
   components: {
     appAboutMe: AboutMe,
     appSkills: Skills,
-    appRecentWork: RecentWork
+    appRecentWork: RecentWork,
+    appBlog: Blog
   }
 }
 </script>
