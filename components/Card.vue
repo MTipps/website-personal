@@ -2,8 +2,12 @@
   <div class="rounded-lg shadow-lg max-w-sm mr-0 sm:mr-10 mb-6">
     <img :src="image" alt="" class="rounded-t-lg object-cover h-48">
     <div class="p-6">
-      <p class="font-sans font-bold text-lg text-pink-600 pb-6">{{ title }}</p>
-      <p class="font-sans text-base text-gray-800 pb-6">{{ description }}</p>
+      <p class="font-sans font-bold text-lg text-pink-600 pb-6">
+        {{ title }}
+      </p>
+      <p class="font-sans text-base text-gray-800 pb-6">
+        {{ description }}
+      </p>
       <div class="tech-stack flex flex-wrap justify-center">
         <div v-for="tech in techUsed" :key="tech.techName" v-html="tech.techIcon" class="pr-6 pt-6" />
       </div>
