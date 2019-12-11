@@ -1,19 +1,21 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <app-navigation />
     <nuxt class="flex-1" />
-    <app-footer />
   </div>
 </template>
 
 <script>
-import Navigation from '../components/Navigation'
-import Footer from '../components/Footer'
+import axios from 'axios'
 
 export default {
-  components: {
-    appNavigation: Navigation,
-    appFooter: Footer
+  asyncData ({ params, error }) {
+    return axios.get(`https://my-api/posts/${params.id}`)
+      .then((res) => {
+        return { title: res.data.title }
+      })
+      .catch((e) => {
+        error({ statusCode: 404, message: 'Post not found' })
+      })
   }
 }
 </script>
