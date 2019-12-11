@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-6 text-center">
+  <div id="recent-work" class="pt-6 text-center">
     <app-section-heading :header="header" :sub-header="subHeader" />
     <div class="flex flex-wrap justify-center pt-6">
       <app-card
