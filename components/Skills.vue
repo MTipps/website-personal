@@ -10,7 +10,9 @@
               {{ tech.techName }}
             </p>
           </div><div class="flex mt-6">
-            <p class="font-sans text-base text-gray-800">Skill Level:</p>
+            <p class="font-sans text-base text-gray-800">
+              Skill Level:
+            </p>
             <app-progress-bar :progress-inner-width="tech.techProgress" class="pl-6" />
           </div>
         </div>
