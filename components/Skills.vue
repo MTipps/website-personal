@@ -2,9 +2,18 @@
   <div class="pt-6 text-center">
     <app-section-heading :header="header" :sub-header="subHeader" />
     <div class="pt-6 flex flex-wrap justify-center">
-      <div v-for="tech in techStack" :key="tech.techName" v-show="tech.techIcon !== ''" class="flex justify-start items-center pb-6 pr-10">
-        <div v-html="tech.techIcon" />
-        <app-progress-bar :progress-inner-width="tech.techProgress" class="pl-6" />
+      <div v-for="tech in techStack" :key="tech.techName" v-show="tech.techIcon !== ''" class="skill">
+        <div class="items-center rounded-lg shadow-lg max-w-xs mr-10 mb-6 p-6">
+          <div>
+            <div v-html="tech.techIcon" />
+            <p class="font-sans font-bold text-lg text-pink-600">
+              {{ tech.techName }}
+            </p>
+          </div><div class="flex mt-6">
+            <p class="font-sans text-base text-gray-800">Skill Level:</p>
+            <app-progress-bar :progress-inner-width="tech.techProgress" class="pl-6" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -31,5 +40,7 @@ export default {
 </script>
 
 <style scoped>
-
+.skill {
+  min-height: 5rem;
+}
 </style>
