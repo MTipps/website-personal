@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-6 text-center">
+  <div id="blog" class="pt-6 text-center">
     <app-sectionheading :header="header" :sub-header="subHeader" />
     <div class="flex flex-wrap justify-center pt-6">
       <app-card

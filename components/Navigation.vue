@@ -29,10 +29,10 @@ export default {
       myName: 'Megan Tipps',
       myTitle: 'Front-end Web Developer',
       navLinks: [
-        { linkName: 'About Me', linkRef: '#' },
-        { linkName: 'Skills', linkRef: '#' },
-        { linkName: 'Recent Work', linkRef: '#' },
-        { linkName: 'Blog', linkRef: '#' },
+        { linkName: 'About Me', linkRef: '#about-me' },
+        { linkName: 'Skills', linkRef: '#skills' },
+        { linkName: 'Recent Work', linkRef: '#recent-work' },
+        { linkName: 'Blog', linkRef: '#blog' },
         { linkName: 'hey@megantipps.co.za', linkRef: 'mailto:hey@megantipps.co.za' }
       ]
     }
