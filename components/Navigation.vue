@@ -32,7 +32,7 @@ export default {
         { linkName: 'About Me', linkRef: '#about-me' },
         { linkName: 'Skills', linkRef: '#skills' },
         { linkName: 'Recent Work', linkRef: '#recent-work' },
-        { linkName: 'Blog', linkRef: '#blog' },
+        // { linkName: 'Blog', linkRef: '#blog' },
         { linkName: 'hey@megantipps.co.za', linkRef: 'mailto:hey@megantipps.co.za' }
       ]
     }
