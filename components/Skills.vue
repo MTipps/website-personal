@@ -2,8 +2,8 @@
   <div class="pt-6 text-center">
     <app-section-heading :header="header" :sub-header="subHeader" />
     <div class="pt-6 flex flex-wrap justify-center">
-      <div v-for="tech in techStack" :key="tech.techName" v-show="tech.techIcon !== ''" class="skill">
-        <div class="items-center rounded-lg shadow-lg max-w-xs mr-10 mb-6 p-6">
+      <div v-for="tech in techStack" :key="tech.techName" v-show="tech.techIcon !== ''">
+        <div class="items-center rounded-lg shadow-lg w-full max-w-xs mr-0 sm:mr-10 mb-6 p-6">
           <div>
             <div v-html="tech.techIcon" />
             <p class="font-sans font-bold text-lg text-pink-600">
@@ -40,7 +40,4 @@ export default {
 </script>
 
 <style scoped>
-.skill {
-  min-height: 5rem;
-}
 </style>
