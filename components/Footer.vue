@@ -23,6 +23,12 @@
       <p class="font-sans text-base text-white">
         Created by me &#169; {{ new Date().getFullYear() }}
       </p>
+      <p class="font-sans text-base text-white">
+        Created with <a href="https://nuxtjs.org/" class="font-sans text-base text-pink-600">Nuxtjs</a> + <a href="https://tailwindcss.com/" class="font-sans text-base text-pink-600">Tailwind CSS</a>
+      </p>
+      <p class="font-sans text-base text-white">
+        Hosted on <a href="https://www.netlify.com/" class="font-sans text-base text-pink-600">Netlify</a>
+      </p>
     </div>
   </footer>
 </template>
