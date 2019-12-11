@@ -5,7 +5,7 @@
       <app-about-me />
       <app-skills />
       <app-recent-work />
-      <app-blog />
+      <app-blog v-show="false" />
     </div>
     <app-footer />
   </div>

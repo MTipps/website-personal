@@ -1,6 +1,8 @@
 <template>
   <div class="rounded-lg shadow-lg max-w-sm mr-0 sm:mr-10 mb-6">
-    <img :src="image" alt="" class="rounded-t-lg object-cover h-48">
+    <div class="flex justify-center">
+      <img :src="image" alt="" class="rounded-t-lg object-cover object-center h-48">
+    </div>
     <div class="p-6">
       <p class="font-sans font-bold text-lg text-pink-600 pb-6">
         {{ title }}
@@ -11,7 +13,7 @@
       <div class="tech-stack flex flex-wrap justify-center">
         <div v-for="tech in getTechStackIcons(techUsed)" :key="tech.techName" v-html="tech.techIcon" class="pr-6 pt-6" />
       </div>
-      <a :href="link" class="block w-full font-sans font-bold text-md text-white bg-pink-600 hover:bg-purple-600 py-4 mt-6 rounded-lg">{{ linkText }}</a>
+      <a :href="link" class="block w-full font-sans font-bold text-md text-white bg-pink-600 hover:bg-purple-600 py-4 mt-6 rounded-lg" target="_blank">{{ linkText }}</a>
     </div>
   </div>
 </template>
