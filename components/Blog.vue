@@ -9,7 +9,7 @@
         :title="blogPost.attributes.title"
         :description="blogPost.attributes.intro"
         :tech-used="blogPost.attributes.techUsed"
-        :link="'blog/' + blogPost.attributes.slug"
+        :link="addBlogInUrl(blogPost.attributes.slug)"
         link-text="Read Post"
         :open-new-tab="false"
       />
@@ -31,12 +31,21 @@ export default {
     blogPosts: {
       type: Array,
       required: true
+    },
+    isBlogInUrl: {
+      type: Boolean,
+      required: true
     }
   },
   data () {
     return {
       header: 'From My Blog',
       subHeader: 'A few bits and bobs from my own mind:'
+    }
+  },
+  methods: {
+    addBlogInUrl (slugName) {
+      return this.isBlogInUrl ? 'blog/' + slugName : slugName
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <app-blog :blog-posts="blogPosts" />
+  <app-blog :blog-posts="blogPosts" :is-blog-in-url="isBlogInUrl" />
 </template>
 
 <script>
@@ -24,6 +24,11 @@ export default {
     console.log(imports)
     return {
       blogPosts: imports
+    }
+  },
+  methods: {
+    isBlogInUrl () {
+      return process.env.NODE_ENV !== 'production'
     }
   }
 }

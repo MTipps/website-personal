@@ -3,7 +3,7 @@
     <app-about-me />
     <app-skills />
     <app-recent-work />
-    <app-blog :blog-posts="blogPosts" />
+    <app-blog :blog-posts="blogPosts" :is-blog-in-url="true" />
   </div>
 </template>
 
