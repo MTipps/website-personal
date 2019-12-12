@@ -11,6 +11,7 @@
         :tech-used="recentWork.techUsed"
         :link="recentWork.link"
         link-text="Visit Site"
+        :open-new-tab="true"
       />
     </div>
   </div>

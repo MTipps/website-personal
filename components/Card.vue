@@ -13,7 +13,8 @@
       <div class="tech-stack flex flex-wrap justify-center">
         <div v-for="tech in getTechStackIcons(techUsed)" :key="tech.techName" v-html="tech.techIcon" class="pr-6 pt-6" />
       </div>
-      <a :href="link" class="block w-full font-sans font-bold text-md text-white bg-pink-600 hover:bg-purple-600 py-4 mt-6 rounded-lg" target="_blank">{{ linkText }}</a>
+      <a v-if="openNewTab" :href="link" class="block w-full font-sans font-bold text-md text-white bg-pink-600 hover:bg-purple-600 py-4 mt-6 rounded-lg" target="_blank">{{ linkText }}</a>
+      <nuxt-link v-else :to="link" class="block w-full font-sans font-bold text-md text-white bg-pink-600 hover:bg-purple-600 py-4 mt-6 rounded-lg">{{ linkText }}</nuxt-link>
     </div>
   </div>
 </template>
@@ -44,6 +45,10 @@ export default {
     },
     linkText: {
       type: String,
+      required: true
+    },
+    openNewTab: {
+      type: Boolean,
       required: true
     }
   },

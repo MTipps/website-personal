@@ -1,6 +1,6 @@
 <template>
   <nav class="navigation flex items-center justify-between flex-wrap p-6 bg-purple-900 shadow-lg">
-    <div class="navigation__left flex items-center mr-10 mb-6 lg:mb-0 w-full lg:w-auto">
+    <nuxt-link to="/" class="navigation__left flex items-center mr-10 mb-6 lg:mb-0 w-full lg:w-auto">
       <img src="@/assets/images/logo_grey.png" alt="" class="rounded-full h-16 w-16 bg-gray-400">
       <div class="info-me pl-4">
         <p class="font-sans text-2xl text-white">
@@ -10,7 +10,7 @@
           {{ myTitle }}
         </p>
       </div>
-    </div>
+    </nuxt-link>
     <div class="navigation__right">
       <ul class="flex flex-col lg:flex-row">
         <li v-for="link in navLinks" :key="link.linkName">

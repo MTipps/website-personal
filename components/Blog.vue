@@ -10,7 +10,8 @@
         :description="blogPost.attributes.intro"
         :tech-used="blogPost.attributes.techUsed"
         :link="'blog/' + blogPost.attributes.slug"
-        link-text="Read More"
+        link-text="Read Post"
+        :open-new-tab="false"
       />
     </div>
   </div>
