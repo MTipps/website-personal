@@ -7,5 +7,8 @@ date: 2019-12-13
 slug: 2019-12-13-my-first-blogpost
 ---
 
+<p class='font-sans font-bold text-4xl text-pink-600 text-center' markdown='1'>
+**Another paragraph** which allows *Markdown* within it.
+</p>
 Hey Everyone, this is simple a test blog post to show you
 the functionality of nuxt markdown blog.
