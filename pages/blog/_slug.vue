@@ -1,8 +1,7 @@
 <template>
-  <div>
-    <div class="post-title">
-      <h1>{{ post.attributes.title }}</h1>
-    </div>
+  <div class="my-6 mx-6 lg:mx-16">
+    <p class="font-sans font-bold text-4xl text-pink-600 text-center">{{ post.attributes.title }}</p>
+    <p>Date posted: {{ $moment(post.attributes.date).format('d/MM/YYYY') }}</p>
     <div class="content" v-html="post.html"></div>
   </div>
 </template>
