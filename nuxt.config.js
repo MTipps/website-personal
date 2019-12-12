@@ -1,3 +1,4 @@
+import path from 'path'
 
 export default {
   mode: 'universal',
@@ -49,10 +50,17 @@ export default {
   ** Build configuration
   */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
     extend (config, ctx) {
+      // ... other code ...
+
+      // add frontmatter-markdown-loader
+      config.module.rules.push(
+        {
+          test: /\.md$/,
+          include: path.resolve(__dirname, 'blog-content'),
+          loader: 'frontmatter-markdown-loader'
+        }
+      )
     }
   }
 }
