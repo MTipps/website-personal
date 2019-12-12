@@ -3,7 +3,8 @@
     <h1>My blog posts</h1>
     <ul>
       <li v-for="post in posts" :key="post.attributes.title">
-        <nuxt-link to="#">{{ post.attributes.title }}</nuxt-link>
+        <nuxt-link :to="'blog/' + post.attributes.slug">{{ post.attributes.title }}</nuxt-link>
+        <p>{{ post.attributes.date }}</p>
       </li>
     </ul>
 
@@ -20,8 +21,12 @@ export default {
       const [, name] = key.match(/\/(.+)\.md$/)
       // eslint-disable-next-line no-console
       console.log(name)
+      console.log(key)
       return resolve(key)
     })
+
+    // eslint-disable-next-line no-console
+    console.log(imports)
     return {
       posts: imports
     }

@@ -1,32 +1,41 @@
 <template>
-  <div>
-    <app-navigation />
-    <div class="mx-6 lg:mx-16">
-      <app-about-me />
-      <app-skills />
-      <app-recent-work />
-      <app-blog v-show="false" />
-    </div>
-    <app-footer />
+  <div class="mx-6 lg:mx-16">
+    <app-about-me />
+    <app-skills />
+    <app-recent-work />
+    <app-blog :blog-posts="blogPosts" />
   </div>
 </template>
 
 <script>
-import Navigation from '../components/Navigation'
 import AboutMe from '../components/AboutMe'
 import Skills from '../components/Skills'
 import RecentWork from '../components/RecentWork'
 import Blog from '../components/Blog'
-import Footer from '../components/Footer'
 
 export default {
   components: {
-    appNavigation: Navigation,
     appAboutMe: AboutMe,
     appSkills: Skills,
     appRecentWork: RecentWork,
-    appBlog: Blog,
-    appFooter: Footer
+    appBlog: Blog
+  },
+  // eslint-disable-next-line require-await
+  async asyncData () {
+    const resolve = require.context('~/blog-content/', true, /\.md$/)
+    const imports = resolve.keys().map((key) => {
+      const [, name] = key.match(/\/(.+)\.md$/)
+      // eslint-disable-next-line no-console
+      console.log(name)
+      console.log(key)
+      return resolve(key)
+    })
+
+    // eslint-disable-next-line no-console
+    console.log(imports)
+    return {
+      blogPosts: imports
+    }
   }
 }
 </script>
