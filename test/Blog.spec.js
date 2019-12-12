@@ -1,11 +1,27 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { mount, createLocalVue, RouterLinkStub } from '@vue/test-utils'
 import Vuex from 'vuex'
 import Blog from '@/components/Blog.vue'
 
 let wrapper
 let store
 let state
+const isBlogInUrl = true
 const localVue = createLocalVue()
+
+const blogPosts = [
+  {
+    attributes: {
+      image: '',
+      title: '',
+      intro: '',
+      techUsed: [ 'React', 'Typescript' ],
+      date: new Date(),
+      slug: ''
+    },
+    html: 'Blah blah blah'
+  }
+]
+
 localVue.use(Vuex)
 
 beforeEach(() => {
@@ -38,7 +54,14 @@ beforeEach(() => {
 
   wrapper = mount(Blog, {
     store,
-    localVue
+    localVue,
+    propsData: {
+      isBlogInUrl,
+      blogPosts
+    },
+    stubs: {
+      NuxtLink: RouterLinkStub
+    }
   })
 })
 
