@@ -10,8 +10,8 @@
         :description="recentWork.description"
         :tech-used="recentWork.techUsed"
         :link="recentWork.link"
-        link-text="Visit Site"
         :open-new-tab="true"
+        link-text="Visit Site"
       />
     </div>
   </div>
