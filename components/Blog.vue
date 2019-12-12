@@ -9,7 +9,7 @@
         :title="blogPost.attributes.title"
         :description="blogPost.attributes.intro"
         :tech-used="blogPost.attributes.techUsed"
-        :link="'blog/' +blogPost.attributes.slug"
+        :link="blogPost.attributes.slug"
         link-text="Read More"
       />
     </div>
