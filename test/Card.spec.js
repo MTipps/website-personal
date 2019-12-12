@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { mount, createLocalVue, RouterLinkStub } from '@vue/test-utils'
 import Vuex from 'vuex'
 import Card from '@/components/Card.vue'
 
@@ -12,6 +12,7 @@ const description = ''
 const techUsed = []
 const link = ''
 const linkText = ''
+const openNewTab = true
 
 localVue.use(Vuex)
 
@@ -41,7 +42,11 @@ beforeEach(() => {
       description,
       techUsed,
       link,
-      linkText
+      linkText,
+      openNewTab
+    },
+    stubs: {
+      NuxtLink: RouterLinkStub
     }
   })
 })

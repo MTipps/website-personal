@@ -10,8 +10,8 @@
         :description="blogPost.attributes.intro"
         :tech-used="blogPost.attributes.techUsed"
         :link="addBlogInUrl(blogPost.attributes.slug)"
-        link-text="Read Post"
         :open-new-tab="false"
+        link-text="Read Post"
       />
     </div>
   </div>
