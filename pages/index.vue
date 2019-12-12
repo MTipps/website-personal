@@ -27,7 +27,6 @@ export default {
       const [, name] = key.match(/\/(.+)\.md$/)
       // eslint-disable-next-line no-console
       console.log(name)
-      console.log(key)
       return resolve(key)
     })
 

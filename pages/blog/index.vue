@@ -6,7 +6,10 @@
 import Blog from '../../components/Blog'
 
 export default {
-  name: 'index',
+  name: 'Index',
+  components: {
+    appBlog: Blog
+  },
   // eslint-disable-next-line require-await
   async asyncData () {
     const resolve = require.context('~/blog-content/', true, /\.md$/)
@@ -14,7 +17,6 @@ export default {
       const [, name] = key.match(/\/(.+)\.md$/)
       // eslint-disable-next-line no-console
       console.log(name)
-      console.log(key)
       return resolve(key)
     })
 
@@ -23,9 +25,6 @@ export default {
     return {
       blogPosts: imports
     }
-  },
-  components: {
-    appBlog: Blog
   }
 }
 </script>

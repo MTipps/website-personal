@@ -22,15 +22,15 @@ import Card from './Card'
 
 export default {
   name: 'Blog',
+  components: {
+    appSectionheading: SectionHeading,
+    appCard: Card
+  },
   props: {
     blogPosts: {
       type: Array,
       required: true
     }
-  },
-  components: {
-    appSectionheading: SectionHeading,
-    appCard: Card
   },
   data () {
     return {
