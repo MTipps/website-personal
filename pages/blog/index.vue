@@ -1,23 +1,13 @@
 <template>
-  <div class="mx-6 lg:mx-16">
-    <app-about-me />
-    <app-skills />
-    <app-recent-work />
-    <app-blog :blog-posts="blogPosts" />
-  </div>
+  <app-blog :blog-posts="blogPosts" />
 </template>
 
 <script>
-import AboutMe from '../components/AboutMe'
-import Skills from '../components/Skills'
-import RecentWork from '../components/RecentWork'
-import Blog from '../components/Blog'
+import Blog from '../../components/Blog'
 
 export default {
+  name: 'Index',
   components: {
-    appAboutMe: AboutMe,
-    appSkills: Skills,
-    appRecentWork: RecentWork,
     appBlog: Blog
   },
   // eslint-disable-next-line require-await
@@ -33,11 +23,12 @@ export default {
     // eslint-disable-next-line no-console
     console.log(imports)
     return {
-      blogPosts: imports.slice(0, 3)
+      blogPosts: imports
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
+
 </style>

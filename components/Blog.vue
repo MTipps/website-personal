@@ -4,12 +4,12 @@
     <div class="flex flex-wrap justify-center pt-6">
       <app-card
         v-for="blogPost in blogPosts"
-        :key="blogPost.title"
-        :image="blogPost.image"
-        :title="blogPost.title"
-        :description="blogPost.description"
-        :tech-used="blogPost.techUsed"
-        :link="blogPost.link"
+        :key="blogPost.attributes.title"
+        :image="blogPost.attributes.image"
+        :title="blogPost.attributes.title"
+        :description="blogPost.attributes.intro"
+        :tech-used="blogPost.attributes.techUsed"
+        :link="'blog/' +blogPost.attributes.slug"
         link-text="Read More"
       />
     </div>
@@ -26,40 +26,16 @@ export default {
     appSectionheading: SectionHeading,
     appCard: Card
   },
+  props: {
+    blogPosts: {
+      type: Array,
+      required: true
+    }
+  },
   data () {
     return {
       header: 'From My Blog',
-      subHeader: 'A few bits and bobs from my own mind:',
-      blogPosts: [
-        {
-          image: 'https://via.placeholder.com/728x90',
-          title: 'What a Post',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rutrum felis dui, congue mollis massa fermentum eget. Etiam sed suscipit sapien. Integer imperdiet odio eget arcu condimentum, sed viverra',
-          techUsed: [ 'HTML', 'CSS', 'Javascript', 'Typescript' ],
-          link: 'Link to Site'
-        },
-        {
-          image: 'https://via.placeholder.com/728x90',
-          title: 'Can this get better?',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rutrum felis dui, congue mollis massa fermentum eget. Etiam sed suscipit sapien. Integer imperdiet odio eget arcu condimentum, sed viverra',
-          techUsed: [],
-          link: 'Link to Site'
-        },
-        {
-          image: 'https://via.placeholder.com/728x90',
-          title: 'It sure can!',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rutrum felis dui, congue mollis massa fermentum eget. Etiam sed suscipit sapien. Integer imperdiet odio eget arcu condimentum, sed viverra',
-          techUsed: [],
-          link: 'Link to Site'
-        },
-        {
-          image: 'https://via.placeholder.com/728x90',
-          title: 'Much wow, too much awesomeness',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rutrum felis dui, congue mollis massa fermentum eget. Etiam sed suscipit sapien. Integer imperdiet odio eget arcu condimentum, sed viverra',
-          techUsed: [ 'HTML', 'CSS', 'Javascript', 'Typescript' ],
-          link: 'Link to Site'
-        }
-      ]
+      subHeader: 'A few bits and bobs from my own mind:'
     }
   }
 }
