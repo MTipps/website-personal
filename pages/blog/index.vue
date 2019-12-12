@@ -1,17 +1,10 @@
 <template>
-  <div>
-    <h1>My blog posts</h1>
-    <ul>
-      <li v-for="post in posts" :key="post.attributes.title">
-        <nuxt-link :to="'blog/' + post.attributes.slug">{{ post.attributes.title }}</nuxt-link>
-        <p>{{ post.attributes.date }}</p>
-      </li>
-    </ul>
-
-  </div>
+  <app-blog :blog-posts="blogPosts" />
 </template>
 
 <script>
+import Blog from '../../components/Blog'
+
 export default {
   name: 'index',
   // eslint-disable-next-line require-await
@@ -28,8 +21,11 @@ export default {
     // eslint-disable-next-line no-console
     console.log(imports)
     return {
-      posts: imports
+      blogPosts: imports
     }
+  },
+  components: {
+    appBlog: Blog
   }
 }
 </script>

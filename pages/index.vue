@@ -34,7 +34,7 @@ export default {
     // eslint-disable-next-line no-console
     console.log(imports)
     return {
-      blogPosts: imports
+      blogPosts: imports.slice(0, 3)
     }
   }
 }

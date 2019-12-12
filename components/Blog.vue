@@ -3,7 +3,7 @@
     <app-sectionheading :header="header" :sub-header="subHeader" />
     <div class="flex flex-wrap justify-center pt-6">
       <app-card
-        v-for="blogPost in blogPosts.slice(0, 3)"
+        v-for="blogPost in blogPosts"
         :key="blogPost.attributes.title"
         :image="blogPost.attributes.image"
         :title="blogPost.attributes.title"
