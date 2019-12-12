@@ -1,12 +1,12 @@
 import path from 'path'
 import glob from 'glob'
 
-// Enhance Nuxt's generate process by gathering all content files from Netifly CMS
-// automatically and match it to the path of your Nuxt routes.
-// The Nuxt routes are generate by Nuxt automatically based on the pages folder.
-const dynamicRoutes = getDynamicPaths({
-  '/blog': 'blog-content/*.md'
-})
+const files = glob.sync('**/*.md', { cwd: 'blog-content' })
+
+function getSlugs (post, _) {
+  const slug = post.substr(0, post.lastIndexOf('.'))
+  return `/blog/${slug}`
+}
 
 export default {
   mode: 'universal',
@@ -57,7 +57,9 @@ export default {
     '@nuxtjs/axios'
   ],
   generate: {
-    routes: dynamicRoutes
+    routes () {
+      return files.map(getSlugs)
+    }
   },
   /*
   ** Build configuration
@@ -76,15 +78,4 @@ export default {
       )
     }
   }
-}
-
-function getDynamicPaths (urlFilepathTable) {
-  return [].concat(
-    ...Object.keys(urlFilepathTable).map((url) => {
-      const filepathGlob = urlFilepathTable[url]
-      return glob
-        .sync(filepathGlob, { cwd: 'blog-content' })
-        .map(filepath => `${url}/${path.basename(filepath, '.md')}`)
-    })
-  )
 }
