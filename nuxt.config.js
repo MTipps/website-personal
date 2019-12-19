@@ -1,3 +1,5 @@
+import config from '../website-personal/contentful.json'
+
 export default {
   mode: 'universal',
   /*
@@ -13,6 +15,11 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
+  },
+  env: {
+    CTF_SPACE_ID: config.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
+    CTF_ENVIRONMENT: config.CTF_ENVIRONMENT
   },
   /*
   ** Customize the progress-bar color

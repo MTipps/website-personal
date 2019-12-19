@@ -14,9 +14,11 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.8.0",
+    "contentful": "^7.11.1",
     "node-sass": "^4.13.0",
     "nuxt": "^2.0.0",
-    "sass-loader": "^8.0.0"
+    "sass-loader": "^8.0.0",
+    "vuex": "latest"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
