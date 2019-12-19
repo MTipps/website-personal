@@ -2,7 +2,7 @@ import { createClient } from '../plugins/contentful'
 const contentfulClient = createClient()
 
 export const state = () => ({
-  techStack: null
+  techStack: []
 })
 
 export const mutations = {
@@ -17,8 +17,20 @@ export const actions = {
       'content_type': 'homePage'
     }).then((page) => {
       if (page) {
-        const techStack = page.items[0].fields.techStack
-        commit('setTechStack', techStack)
+        const rawTechStack = page.items[0].fields.techStack
+        const techStackArray = []
+
+        rawTechStack.forEach(function (techStack) {
+          const tech = {
+            techName: techStack.fields.techName,
+            techIcon: techStack.fields.techIcon,
+            techProgress: techStack.fields.techProgress
+          }
+
+          techStackArray.push(tech)
+        })
+
+        commit('setTechStack', techStackArray)
       }
     }).catch((err) => {
       console.log('error', err)
