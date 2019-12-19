@@ -1,13 +1,3 @@
-import path from 'path'
-import glob from 'glob'
-
-const files = glob.sync('**/*.md', { cwd: 'blog-content' })
-
-function getSlugs (post, _) {
-  const slug = post.substr(0, post.lastIndexOf('.'))
-  return `/blog/${slug}`
-}
-
 export default {
   mode: 'universal',
   /*
@@ -56,26 +46,11 @@ export default {
   modules: [
     '@nuxtjs/axios'
   ],
-  generate: {
-    routes () {
-      return files.map(getSlugs)
-    }
-  },
   /*
   ** Build configuration
   */
   build: {
     extend (config, ctx) {
-      // ... other code ...
-
-      // add frontmatter-markdown-loader
-      config.module.rules.push(
-        {
-          test: /\.md$/,
-          include: path.resolve(__dirname, 'blog-content'),
-          loader: 'frontmatter-markdown-loader'
-        }
-      )
     }
   }
 }
