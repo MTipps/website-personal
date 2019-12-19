@@ -23,6 +23,12 @@ import Card from './Card'
 
 export default {
   name: 'RecentWork',
+  props: {
+    recentWorks: {
+      type: Array,
+      required: true
+    }
+  },
   components: {
     appSectionHeading: SectionHeading,
     appCard: Card
@@ -30,8 +36,7 @@ export default {
   data () {
     return {
       header: 'Recent Work',
-      subHeader: 'Here are a few things that I have done:',
-      recentWorks: this.$store.state.recentWorkData.recentWorks
+      subHeader: 'Here are a few things that I have done:'
     }
   }
 }

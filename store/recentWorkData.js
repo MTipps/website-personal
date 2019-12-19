@@ -1,3 +1,6 @@
+// TODO: Put description text through grammarly
+// TODO: Remove image file from static folder
+// TODO: Remove this file
 export const state = () => ({
   recentWorks: [
     {

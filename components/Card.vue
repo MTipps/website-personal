@@ -1,3 +1,4 @@
+<!-- TODO: Sort out icons situation -->
 <template>
   <div class="rounded-lg shadow-lg max-w-sm mr-0 sm:mr-10 mb-6">
     <div class="flex justify-center">

@@ -1,4 +1,5 @@
 <!--TODO: Add Icons to SVG System -->
+<!-- TODO: Add text in data() to Contentful -->
 
 <template>
   <div id="skills" class="pt-6 text-center">

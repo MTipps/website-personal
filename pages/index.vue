@@ -2,7 +2,7 @@
   <div class="mx-6 lg:mx-16">
     <app-about-me />
     <app-skills :tech-stack="techStack" />
-<!--    <app-recent-work />-->
+    <app-recent-work :recent-works="recentWork" />
 <!--    <app-blog v-show="false" :blog-posts="[]" :is-blog-in-url="true" />-->
   </div>
 </template>
@@ -11,15 +11,18 @@
 import { mapState } from 'vuex'
 import AboutMe from '../components/AboutMe'
 import Skills from '../components/Skills'
+import RecentWork from '../components/RecentWork'
 
 export default {
   components: {
     appAboutMe: AboutMe,
-    appSkills: Skills
+    appSkills: Skills,
+    appRecentWork: RecentWork
   },
   computed: {
     ...mapState('homepage', [
-      'techStack'
+      'techStack',
+      'recentWork'
     ])
   },
   mounted () {

@@ -2,12 +2,16 @@ import { createClient } from '../plugins/contentful'
 const contentfulClient = createClient()
 
 export const state = () => ({
-  techStack: []
+  techStack: [],
+  recentWork: []
 })
 
 export const mutations = {
   setTechStack (state, data) {
     state.techStack = data
+  },
+  setRecentWork (state, data) {
+    state.recentWork = data
   }
 }
 
@@ -18,22 +22,49 @@ export const actions = {
     }).then((page) => {
       if (page) {
         const rawTechStack = page.items[0].fields.techStack
-        const techStackArray = []
+        const rawRecentWork = page.items[0].fields.recentWork
 
-        rawTechStack.forEach(function (techStack) {
-          const tech = {
-            techName: techStack.fields.techName,
-            techIcon: techStack.fields.techIcon,
-            techProgress: techStack.fields.techProgress
-          }
+        console.log(createRecentWorkObjectArray(rawRecentWork))
 
-          techStackArray.push(tech)
-        })
-
-        commit('setTechStack', techStackArray)
+        commit('setTechStack', createTechStackObjectArray(rawTechStack))
+        commit('setRecentWork', createRecentWorkObjectArray(rawRecentWork))
       }
     }).catch((err) => {
       console.log('error', err)
     })
   }
+}
+
+function createTechStackObjectArray (rawTechStack) {
+  const techStackArray = []
+
+  rawTechStack.forEach(function (techStack) {
+    const tech = {
+      techName: techStack.fields.techName,
+      techIcon: techStack.fields.techIcon,
+      techProgress: techStack.fields.techProgress
+    }
+
+    techStackArray.push(tech)
+  })
+
+  return techStackArray
+}
+
+function createRecentWorkObjectArray (rawRecentWork) {
+  const recentWorkArray = []
+
+  rawRecentWork.forEach(function (recentWork) {
+    const work = {
+      image: recentWork.fields.image.fields.file.url,
+      title: recentWork.fields.title,
+      description: recentWork.fields.description,
+      techUsed: createTechStackObjectArray(recentWork.fields.techUsed),
+      link: recentWork.fields.link
+    }
+
+    recentWorkArray.push(work)
+  })
+
+  return recentWorkArray
 }
