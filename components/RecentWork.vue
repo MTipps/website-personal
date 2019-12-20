@@ -1,4 +1,3 @@
-<!-- TODO: Move text in data() to Contentful-->
 <template>
   <div id="recent-work" class="pt-6 text-center">
     <app-section-heading :header="recentWorkHeader" :sub-header="recentWorkSubHeader" />
