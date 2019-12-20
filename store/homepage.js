@@ -1,4 +1,5 @@
 import { createClient } from '../plugins/contentful'
+import richTextUtilities from '../plugins/richTextUtilities'
 const contentfulClient = createClient()
 
 export const state = () => ({
@@ -46,8 +47,6 @@ export const actions = {
         const rawTechStack = page.items[0].fields.techStack
         const rawRecentWork = page.items[0].fields.recentWork
 
-        console.log(rawAboutMe)
-
         commit('setTechStackHeader', techStackHeader)
         commit('setTechStackSubHeader', techStackSubHeader)
         commit('setRecentWorkHeader', recentWorkHeader)
@@ -68,7 +67,7 @@ function createAboutMeArray (rawAboutMe) {
   const paragraphsArray = []
 
   rawAboutMe.forEach(function (paragraph) {
-    const paragraphValue = createParagraphContent(paragraph.content)
+    const paragraphValue = richTextUtilities.convertRichTextToUpdatedArray(paragraph.content)
 
     const paragraphUpdated = {
       text: paragraphValue
@@ -76,61 +75,7 @@ function createAboutMeArray (rawAboutMe) {
     paragraphsArray.push(paragraphUpdated)
   })
 
-  console.log(paragraphsArray)
-
   return paragraphsArray
-}
-
-// TODO: Move to helper class as it can help in blog creation
-function createParagraphContent (paragraphData) {
-  let paragraphText = ''
-
-  paragraphData.forEach(function (content) {
-    switch (content.nodeType) {
-      case 'text':
-        paragraphText += createTextValue(content.value, content.marks)
-        break
-      case 'hyperlink':
-        paragraphText += createHyperlinkValue(content.content, content.data.uri)
-        break
-    }
-  })
-
-  return paragraphText
-}
-
-// TODO: Move to helper class as it can help in blog creation
-function createTextValue (value, marks) {
-  let newValue = value
-  if (newValue === '') { return '' }
-  if (marks.length === 0) { return newValue }
-
-  marks.forEach(function (mark) {
-    switch (mark.type) {
-      case 'bold':
-        newValue = textBold(newValue)
-        break
-      case 'italic':
-        newValue = textItalic(newValue)
-        break
-    }
-  })
-  return newValue
-}
-
-function createHyperlinkValue (content, link) {
-  const linkText = createParagraphContent(content)
-  return '<a href="' + link + '">' + linkText + '</a>'
-}
-
-// TODO: Move to helper class as it can help in blog creation
-function textBold (value) {
-  return '<b>' + value + '</b>'
-}
-
-// TODO: Move to helper class as it can help in blog creation
-function textItalic (value) {
-  return '<i>' + value + '</i>'
 }
 
 function createTechStackObjectArray (rawTechStack) {
