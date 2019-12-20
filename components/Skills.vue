@@ -3,12 +3,12 @@
 
 <template>
   <div id="skills" class="pt-6 text-center">
-    <app-section-heading :header="header" :sub-header="subHeader" />
+    <app-section-heading :header="techStackHeader" :sub-header="techStackSubHeader" />
     <div class="pt-6 flex flex-wrap justify-center">
       <div v-for="tech in techStack" :key="tech.techName" v-show="tech.techIcon !== ''">
         <div class="items-center rounded-lg shadow-lg w-full max-w-xs mr-0 sm:mr-10 mb-6 p-6">
           <div class="flex flex-col items-center">
-<!--            <div v-html="tech.techIcon" class="h-12 w-12" />-->
+            <!--            <div v-html="tech.techIcon" class="h-12 w-12" />-->
             <p class="font-sans font-bold text-lg text-pink-600">
               {{ tech.techName }}
             </p>
@@ -30,20 +30,22 @@ import Progressbar from './Progressbar'
 
 export default {
   name: 'Skills',
-  props: {
-    techStack: {
-      type: Array,
-      required: true
-    }
-  },
   components: {
     appSectionHeading: SectionHeading,
     appProgressBar: Progressbar
   },
-  data () {
-    return {
-      header: 'What can I do?',
-      subHeader: 'Learning new languages and frameworks is what keeps me going. Here are a list of my current skills:'
+  props: {
+    techStackHeader: {
+      type: String,
+      required: true
+    },
+    techStackSubHeader: {
+      type: String,
+      required: true
+    },
+    techStack: {
+      type: Array,
+      required: true
     }
   }
 }

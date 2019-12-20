@@ -1,7 +1,7 @@
 <!-- TODO: Move text in data() to Contentful-->
 <template>
   <div id="recent-work" class="pt-6 text-center">
-    <app-section-heading :header="header" :sub-header="subHeader" />
+    <app-section-heading :header="recentWorkHeader" :sub-header="recentWorkSubHeader" />
     <div class="flex flex-wrap justify-center pt-6">
       <app-card
         v-for="recentWork in recentWorks"
@@ -24,20 +24,22 @@ import Card from './Card'
 
 export default {
   name: 'RecentWork',
-  props: {
-    recentWorks: {
-      type: Array,
-      required: true
-    }
-  },
   components: {
     appSectionHeading: SectionHeading,
     appCard: Card
   },
-  data () {
-    return {
-      header: 'Recent Work',
-      subHeader: 'Here are a few things that I have done:'
+  props: {
+    recentWorkHeader: {
+      type: String,
+      required: true
+    },
+    recentWorkSubHeader: {
+      type: String,
+      required: true
+    },
+    recentWorks: {
+      type: Array,
+      required: true
     }
   }
 }

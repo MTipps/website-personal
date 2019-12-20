@@ -2,13 +2,29 @@ import { createClient } from '../plugins/contentful'
 const contentfulClient = createClient()
 
 export const state = () => ({
+  techStackHeader: '',
+  techStackSubHeader: '',
   techStack: [],
+  recentWorkHeader: '',
+  recentWorkSubHeader: '',
   recentWork: []
 })
 
 export const mutations = {
+  setTechStackHeader (state, data) {
+    state.techStackHeader = data
+  },
+  setTechStackSubHeader (state, data) {
+    state.techStackSubHeader = data
+  },
   setTechStack (state, data) {
     state.techStack = data
+  },
+  setRecentWorkHeader (state, data) {
+    state.recentWorkHeader = data
+  },
+  setRecentWorkSubHeader (state, data) {
+    state.recentWorkSubHeader = data
   },
   setRecentWork (state, data) {
     state.recentWork = data
@@ -21,15 +37,20 @@ export const actions = {
       'content_type': 'homePage'
     }).then((page) => {
       if (page) {
+        const { techStackHeader, techStackSubHeader, recentWorkHeader, recentWorkSubHeader } = page.items[0].fields
         const rawTechStack = page.items[0].fields.techStack
         const rawRecentWork = page.items[0].fields.recentWork
 
-        console.log(createRecentWorkObjectArray(rawRecentWork))
+        commit('setTechStackHeader', techStackHeader)
+        commit('setTechStackSubHeader', techStackSubHeader)
+        commit('setRecentWorkHeader', recentWorkHeader)
+        commit('setRecentWorkSubHeader', recentWorkSubHeader)
 
         commit('setTechStack', createTechStackObjectArray(rawTechStack))
         commit('setRecentWork', createRecentWorkObjectArray(rawRecentWork))
       }
     }).catch((err) => {
+      // eslint-disable-next-line no-console
       console.log('error', err)
     })
   }
