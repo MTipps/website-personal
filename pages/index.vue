@@ -1,4 +1,3 @@
-<!-- TODO: About me section, add to Contentful -->
 <!-- TODO: Check out Tailwind CSS lazy loading and implement -->
 <!-- TODO: Implement for Contentful when you are in draft mode that it should show in dev but not prod. -->
 <!-- TODO: Fix tests -->
