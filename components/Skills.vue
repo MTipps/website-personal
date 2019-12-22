@@ -1,5 +1,3 @@
-<!--TODO: Add Icons to SVG System -->
-
 <template>
   <div id="skills" class="pt-6 text-center">
     <app-section-heading :header="techStackHeader" :sub-header="techStackSubHeader" />

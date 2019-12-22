@@ -1,4 +1,3 @@
-<!-- TODO: Sort out icons situation -->
 <template>
   <div class="rounded-lg shadow-lg max-w-sm mr-0 sm:mr-10 mb-6">
     <div class="flex justify-center">
@@ -8,11 +7,13 @@
       <p class="font-sans font-bold text-lg text-pink-600 pb-6">
         {{ title }}
       </p>
-      <p class="font-sans text-base text-gray-800 pb-6">
+      <p class="h-40 font-sans text-base text-gray-800 pb-6">
         {{ description }}
       </p>
       <div class="tech-stack flex flex-wrap justify-center">
-        <div v-for="tech in getTechStackIcons(techUsed)" :key="tech.techName" v-html="tech.techIcon" class="pr-6 pt-6" />
+        <div v-for="(tech) in techUsed" :key="tech.techName" class="pr-6 pt-6">
+          <app-icon :icon-name="tech.techIcon[0]" class="h-12 w-12" />
+        </div>
       </div>
       <a v-if="openNewTab" :href="link" class="block w-full font-sans font-bold text-md text-white bg-pink-600 hover:bg-purple-600 py-4 mt-6 rounded-lg" target="_blank">
         {{ linkText }}
@@ -25,8 +26,13 @@
 </template>
 
 <script>
+import Icon from './Icon'
+
 export default {
   name: 'Card',
+  components: {
+    appIcon: Icon
+  },
   props: {
     image: {
       type: String,
@@ -55,26 +61,6 @@ export default {
     openNewTab: {
       type: Boolean,
       required: true
-    }
-  },
-  data () {
-    return {
-      techStack: this.$store.state.techStackData.techStack
-    }
-  },
-  methods: {
-    getTechStackIcons (iconsToGetArray) {
-      const iconsArray = []
-
-      this.techStack.forEach(function (tech) {
-        iconsToGetArray.forEach(function (iconName) {
-          if (iconName === tech.techName) {
-            iconsArray.push(tech)
-          }
-        })
-      })
-
-      return iconsArray
     }
   }
 }
