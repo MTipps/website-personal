@@ -1,21 +1,22 @@
 <template>
   <app-icon-base :icon-name="iconName">
-    <app-icon-html v-if="iconName === 'html'" />
-    <app-icon-css v-if="iconName === 'css'" />
-    <app-icon-sass v-if="iconName === 'sass'" />
-    <app-icon-javascript v-if="iconName === 'javascript'" />
-    <app-icon-jquery v-if="iconName === 'jquery'" />
-    <app-icon-vuejs v-if="iconName === 'vuejs'" />
-    <app-icon-nuxtjs v-if="iconName === 'nuxtjs'" />
-    <app-icon-react v-if="iconName === 'react'" />
-    <app-icon-angular v-if="iconName === 'angular'" />
-    <app-icon-typescript v-if="iconName === 'typescript'" />
-    <app-icon-wordpress v-if="iconName === 'wordpress'" />
-    <app-icon-contentful v-if="iconName === 'contentful'" />
+    <app-icon-html v-if="iconName === techStackLabels.html.name" />
+    <app-icon-css v-if="iconName === techStackLabels.css.name" />
+    <app-icon-sass v-if="iconName === techStackLabels.sass.name" />
+    <app-icon-javascript v-if="iconName === techStackLabels.javascript.name" />
+    <app-icon-jquery v-if="iconName === techStackLabels.jquery.name" />
+    <app-icon-vuejs v-if="iconName === techStackLabels.vuejs.name" />
+    <app-icon-nuxtjs v-if="iconName === techStackLabels.nuxtjs.name" />
+    <app-icon-react v-if="iconName === techStackLabels.react.name" />
+    <app-icon-angular v-if="iconName === techStackLabels.angular.name" />
+    <app-icon-typescript v-if="iconName === techStackLabels.typescript.name" />
+    <app-icon-wordpress v-if="iconName === techStackLabels.wordpress.name" />
+    <app-icon-contentful v-if="iconName === techStackLabels.contentful.name" />
   </app-icon-base>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import IconBase from '../components/icons/IconBase'
 import IconHtml from '../components/icons/IconHtml'
 import IconCss from '../components/icons/IconCss'
@@ -32,12 +33,6 @@ import IconContentful from './icons/IconContentful'
 
 export default {
   name: 'Icon',
-  props: {
-    iconName: {
-      type: String,
-      required: true
-    }
-  },
   components: {
     appIconBase: IconBase,
     appIconHtml: IconHtml,
@@ -52,6 +47,15 @@ export default {
     appIconTypescript: IconTypescript,
     appIconWordpress: IconWordpress,
     appIconContentful: IconContentful
+  },
+  props: {
+    iconName: {
+      type: String,
+      required: true
+    }
+  },
+  computed: {
+    ...mapState('techStack', [ 'techStackLabels' ])
   }
 }
 </script>
