@@ -35,6 +35,21 @@ export const state = () => ({
     },
     contentful: {
       name: 'contentful'
+    },
+    linkedin: {
+      name: 'linkedin'
+    },
+    github: {
+      name: 'github'
+    },
+    stackoverflow: {
+      name: 'stackoverflow'
+    },
+    codepen: {
+      name: 'codepen'
+    },
+    email: {
+      name: 'email'
     }
   }
 })

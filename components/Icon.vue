@@ -1,5 +1,5 @@
 <template>
-  <app-icon-base :icon-name="iconName">
+  <app-icon-base :icon-name="iconName" :icon-class="iconClass">
     <app-icon-html v-if="iconName === techStackLabels.html.name" />
     <app-icon-css v-if="iconName === techStackLabels.css.name" />
     <app-icon-sass v-if="iconName === techStackLabels.sass.name" />
@@ -12,6 +12,12 @@
     <app-icon-typescript v-if="iconName === techStackLabels.typescript.name" />
     <app-icon-wordpress v-if="iconName === techStackLabels.wordpress.name" />
     <app-icon-contentful v-if="iconName === techStackLabels.contentful.name" />
+
+    <app-icon-linkedin v-if="iconName === techStackLabels.linkedin.name" />
+    <app-icon-github v-if="iconName === techStackLabels.github.name" />
+    <app-icon-stackoverflow v-if="iconName === techStackLabels.stackoverflow.name" />
+    <app-icon-codepen v-if="iconName === techStackLabels.codepen.name" />
+    <app-icon-email v-if="iconName === techStackLabels.email.name" />
   </app-icon-base>
 </template>
 
@@ -30,6 +36,11 @@ import IconAngular from './icons/IconAngular'
 import IconTypescript from './icons/IconTypescript'
 import IconWordpress from './icons/IconWordpress'
 import IconContentful from './icons/IconContentful'
+import IconLinkedin from './icons/IconLinkedin'
+import IconGithub from './icons/IconGithub'
+import IconStackoverflow from './icons/IconStackoverflow'
+import IconCodepen from './icons/IconCodepen'
+import IconEmail from './icons/IconEmail'
 
 export default {
   name: 'Icon',
@@ -46,10 +57,19 @@ export default {
     appIconAngular: IconAngular,
     appIconTypescript: IconTypescript,
     appIconWordpress: IconWordpress,
-    appIconContentful: IconContentful
+    appIconContentful: IconContentful,
+    appIconLinkedin: IconLinkedin,
+    appIconGithub: IconGithub,
+    appIconStackoverflow: IconStackoverflow,
+    appIconCodepen: IconCodepen,
+    appIconEmail: IconEmail
   },
   props: {
     iconName: {
+      type: String,
+      required: true
+    },
+    iconClass: {
       type: String,
       required: true
     }

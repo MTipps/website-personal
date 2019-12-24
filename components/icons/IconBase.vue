@@ -1,8 +1,8 @@
 <template>
   <svg
     :viewBox="viewBox"
+    :class="iconClass"
     xmlns="http://www.w3.org/2000/svg"
-    class="fill-current text-gray-800 hover:text-purple-800 inline-block h-12 w-12"
   >
     <title :id="iconName">{{ iconName }} icon</title>
     <g>
@@ -19,7 +19,11 @@ export default {
   props: {
     iconName: {
       type: String,
-      default: 'box'
+      required: true
+    },
+    iconClass: {
+      type: String,
+      required: true
     }
   },
   computed: {
@@ -63,6 +67,21 @@ export default {
           break
         case this.techStackLabels.contentful.name:
           viewBox = `0 0 256 289`
+          break
+        case this.techStackLabels.linkedin.name:
+          viewBox = `0 0 448 512`
+          break
+        case this.techStackLabels.github.name:
+          viewBox = `0 0 496 512`
+          break
+        case this.techStackLabels.stackoverflow.name:
+          viewBox = `0 0 384 512`
+          break
+        case this.techStackLabels.codepen.name:
+          viewBox = `0 0 512 512`
+          break
+        case this.techStackLabels.email.name:
+          viewBox = `0 0 512 512`
           break
       }
 

@@ -12,7 +12,7 @@
       </p>
       <div class="tech-stack flex flex-wrap justify-center">
         <div v-for="(tech) in techUsed" :key="tech.techName" class="pr-6 pt-6">
-          <app-icon :icon-name="tech.techIcon[0]" class="h-12 w-12" />
+          <app-icon :icon-name="tech.techIcon[0]" icon-class="fill-current text-gray-800 hover:text-purple-800 inline-block h-12 w-12" class="h-12 w-12" />
         </div>
       </div>
       <a v-if="openNewTab" :href="link" class="block w-full font-sans font-bold text-md text-white bg-pink-600 hover:bg-purple-600 py-4 mt-6 rounded-lg" target="_blank">

@@ -34,8 +34,6 @@ export const actions = {
         const logo = navigation.items[0].fields.logo.fields.file.url
         const rawLinks = navigation.items[0].fields.links
 
-        console.log(navigation.items[0])
-
         commit('setMyName', myName)
         commit('setMyTitle', myTitle)
         commit('setLogo', logo)
