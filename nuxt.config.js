@@ -1,12 +1,4 @@
-import path from 'path'
-import glob from 'glob'
-
-const files = glob.sync('**/*.md', { cwd: 'blog-content' })
-
-function getSlugs (post, _) {
-  const slug = post.substr(0, post.lastIndexOf('.'))
-  return `/blog/${slug}`
-}
+import config from '../website-personal/contentful.json'
 
 export default {
   mode: 'universal',
@@ -24,6 +16,12 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  env: {
+    CTF_SPACE_ID: config.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
+    CTF_CPA_ACCESS_TOKEN: config.CTF_CPA_ACCESS_TOKEN,
+    CTF_ENVIRONMENT: config.CTF_ENVIRONMENT
+  },
   /*
   ** Customize the progress-bar color
   */
@@ -37,7 +35,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~plugins/ga.js', mode: 'client' }
+    { src: '~plugins/ga.js', mode: 'client' },
+    '@/plugins/vue-lazyload'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -56,26 +55,11 @@ export default {
   modules: [
     '@nuxtjs/axios'
   ],
-  generate: {
-    routes () {
-      return files.map(getSlugs)
-    }
-  },
   /*
   ** Build configuration
   */
   build: {
     extend (config, ctx) {
-      // ... other code ...
-
-      // add frontmatter-markdown-loader
-      config.module.rules.push(
-        {
-          test: /\.md$/,
-          include: path.resolve(__dirname, 'blog-content'),
-          loader: 'frontmatter-markdown-loader'
-        }
-      )
     }
   }
 }

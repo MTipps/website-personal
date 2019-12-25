@@ -1,6 +1,6 @@
 <template>
   <div id="recent-work" class="pt-6 text-center">
-    <app-section-heading :header="header" :sub-header="subHeader" />
+    <app-section-heading :header="recentWorkHeader" :sub-header="recentWorkSubHeader" />
     <div class="flex flex-wrap justify-center pt-6">
       <app-card
         v-for="recentWork in recentWorks"
@@ -27,11 +27,18 @@ export default {
     appSectionHeading: SectionHeading,
     appCard: Card
   },
-  data () {
-    return {
-      header: 'Recent Work',
-      subHeader: 'Here are a few things that I have done:',
-      recentWorks: this.$store.state.recentWorkData.recentWorks
+  props: {
+    recentWorkHeader: {
+      type: String,
+      required: true
+    },
+    recentWorkSubHeader: {
+      type: String,
+      required: true
+    },
+    recentWorks: {
+      type: Array,
+      required: true
     }
   }
 }
