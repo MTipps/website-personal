@@ -1,4 +1,4 @@
-import config from '../website-personal/contentful.json'
+require('dotenv').config()
 
 export default {
   mode: 'universal',
@@ -15,12 +15,6 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
-  },
-  env: {
-    CTF_SPACE_ID: config.CTF_SPACE_ID,
-    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
-    CTF_CPA_ACCESS_TOKEN: config.CTF_CPA_ACCESS_TOKEN,
-    CTF_ENVIRONMENT: config.CTF_ENVIRONMENT
   },
   /*
   ** Customize the progress-bar color
@@ -47,7 +41,9 @@ export default {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     // https://www.npmjs.com/package/@nuxtjs/moment
-    '@nuxtjs/moment'
+    '@nuxtjs/moment',
+    // https://github.com/nuxt-community/dotenv-module
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Nuxt.js modules
