@@ -19,6 +19,7 @@ export default {
   env: {
     CTF_SPACE_ID: config.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
+    CTF_CPA_ACCESS_TOKEN: config.CTF_CPA_ACCESS_TOKEN,
     CTF_ENVIRONMENT: config.CTF_ENVIRONMENT
   },
   /*
