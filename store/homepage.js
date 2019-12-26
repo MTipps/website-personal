@@ -39,7 +39,7 @@ export const mutations = {
 export const actions = {
   getPageItems ({ commit }) {
     // eslint-disable-next-line no-console
-    console.log(process.env.NODE_ENV)
+    console.log(process.env)
     contentfulClient.getEntries({
       'content_type': 'homePage'
     }).then((page) => {
