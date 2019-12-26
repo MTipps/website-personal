@@ -37,6 +37,7 @@ export const mutations = {
 }
 
 export const actions = {
+  console.log(process.env.NODE_ENV)
   getPageItems ({ commit }) {
     contentfulClient.getEntries({
       'content_type': 'homePage'
