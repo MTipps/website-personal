@@ -1,33 +1,13 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
-import Vue from 'vue'
-import VueLazyload from 'vue-lazyload'
-import RecentWork from '@/components/RecentWork.vue'
+import Icon from '@/components/Icon.vue'
 
 let wrapper
 let store
 let state
 const localVue = createLocalVue()
-const recentWorkHeader = ''
-const recentWorkSubHeader = ''
-const recentWorks = [
-  {
-    image: '',
-    title: '',
-    description: '',
-    techUsed: [
-      {
-        techName: '',
-        techIcon: [ '' ]
-      }
-    ],
-    link: ''
-  }
-]
-const vueLazyLoad = Vue.use(VueLazyload, {
-  preLoad: 1,
-  attempt: 1
-})
+const iconName = 'html'
+const iconClass = ''
 
 localVue.use(Vuex)
 
@@ -97,16 +77,12 @@ beforeEach(() => {
     }
   })
 
-  wrapper = mount(RecentWork, {
+  wrapper = mount(Icon, {
     store,
     localVue,
     propsData: {
-      recentWorkHeader,
-      recentWorkSubHeader,
-      recentWorks
-    },
-    directives: {
-      vueLazyLoad
+      iconName,
+      iconClass
     }
   })
 })
@@ -115,7 +91,7 @@ afterEach(() => {
   wrapper.destroy()
 })
 
-describe('RecentWork', () => {
+describe('Icon', () => {
   test('is a Vue instance', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
