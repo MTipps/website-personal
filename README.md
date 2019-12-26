@@ -16,6 +16,8 @@
 ## Test
 Jest is used as the testing framework, for more information read the [Jest docs](https://jestjs.io/docs/en/getting-started)
 
+Run tests with `yarn test`
+
 ## Deployment
 When code is pushed to the `master` or `dev` branch, the code will be automatically deployed to [Netlify](https://www.netlify.com/).
 Ensure environment variables are setup correctly in both the production and staging sites on Netlify.
