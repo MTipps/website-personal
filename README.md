@@ -5,26 +5,17 @@
 ## Tech Used
 - [Nuxt.js](https://nuxtjs.org)
 - [Tailwind CSS](https://tailwindcss.com)
+- [Contentful](https://www.contentful.com/)
 
 ## Build Setup
 
-``` bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-```
+1. Setup your .env file in the root directory, a sample file has been provided.
+2. Run `yarn install` to install packages
+3. Run `yarn run dev` to start the development server, your server will be hosted on [localhost:3000](localhost:3000)
 
 ## Test
 Jest is used as the testing framework, for more information read the [Jest docs](https://jestjs.io/docs/en/getting-started)
 
 ## Deployment
-The code is deployed to [Netlify](https://www.netlify.com/), this happens automagically when code is pushed to the `master` branch.
+When code is pushed to the `master` or `dev` branch, the code will be automatically deployed to [Netlify](https://www.netlify.com/).
+Ensure environment variables are setup correctly in both the production and staging sites on Netlify.

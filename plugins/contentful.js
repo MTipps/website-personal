@@ -7,8 +7,8 @@ const contentful = require('contentful')
 
 const config = {
   space: process.env.CTF_SPACE_ID,
-  accessToken: process.env.NODE_ENV !== 'production' ? process.env.CTF_CPA_ACCESS_TOKEN : process.env.CTF_CDA_ACCESS_TOKEN,
-  host: process.env.NODE_ENV !== 'production' ? 'preview.contentful.com' : 'cdn.contentful.com',
+  accessToken: process.env.APP_ENVIRONMENT !== 'production' ? process.env.CTF_CPA_ACCESS_TOKEN : process.env.CTF_CDA_ACCESS_TOKEN,
+  host: process.env.APP_ENVIRONMENT !== 'production' ? 'preview.contentful.com' : 'cdn.contentful.com',
   environment: process.env.CTF_ENVIRONMENT
 }
 
