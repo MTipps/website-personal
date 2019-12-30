@@ -1,7 +1,7 @@
 <template>
   <nav class="navigation flex items-center justify-between flex-wrap p-6 bg-purple-900 shadow-lg">
-    <div class="navigation__left flex items-center mr-10 mb-6 lg:mb-0 w-full lg:w-auto">
-      <img src="@/assets/images/logo_grey.png" alt="" class="rounded-full h-16 w-16 bg-gray-400">
+    <nuxt-link to="/" class="navigation__left flex items-center mr-10 mb-6 lg:mb-0 w-full lg:w-auto">
+      <img v-lazy="logo" alt="" class="rounded-full h-16 w-16 bg-gray-400">
       <div class="info-me pl-4">
         <p class="font-sans text-2xl text-white">
           {{ myName }}
@@ -10,11 +10,11 @@
           {{ myTitle }}
         </p>
       </div>
-    </div>
+    </nuxt-link>
     <div class="navigation__right">
       <ul class="flex flex-col lg:flex-row">
-        <li v-for="link in navLinks" :key="link.linkName">
-          <a :href="link.linkRef" class="font-sans text-base text-white hover:text-pink-600 lg:pl-6">{{ link.linkName }}</a>
+        <li v-for="link in navigationLinks" :key="link.linkName">
+          <a :href="link.LinkRef" class="font-sans text-base text-white hover:text-pink-600 lg:pl-6">{{ link.linkName }}</a>
         </li>
       </ul>
     </div>
@@ -22,20 +22,20 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'Navigation',
-  data () {
-    return {
-      myName: 'Megan Tipps',
-      myTitle: 'Front-end Web Developer',
-      navLinks: [
-        { linkName: 'About Me', linkRef: '#about-me' },
-        { linkName: 'Skills', linkRef: '#skills' },
-        { linkName: 'Recent Work', linkRef: '#recent-work' },
-        // { linkName: 'Blog', linkRef: '#blog' },
-        { linkName: 'hey@megantipps.co.za', linkRef: 'mailto:hey@megantipps.co.za' }
-      ]
-    }
+  computed: {
+    ...mapState('navigation', [
+      'myName',
+      'myTitle',
+      'logo',
+      'navigationLinks'
+    ])
+  },
+  mounted () {
+    this.$store.dispatch('navigation/getNavigationItems')
   }
 }
 </script>
