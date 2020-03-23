@@ -4,7 +4,6 @@
 
 ## Tech Used
 - [Nuxt.js](https://nuxtjs.org)
-- [Tailwind CSS](https://tailwindcss.com)
 - [Contentful](https://www.contentful.com/)
 
 ## Build Setup

@@ -36,8 +36,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~plugins/ga.js', mode: 'client' },
-    '@/plugins/vue-lazyload'
+    { src: '~plugins/ga.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -45,8 +44,6 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss',
     // https://www.npmjs.com/package/@nuxtjs/moment
     '@nuxtjs/moment',
     // https://github.com/nuxt-community/dotenv-module
