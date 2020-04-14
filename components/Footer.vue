@@ -1,6 +1,7 @@
 <template>
   <footer class="bg-purple-900 p-6 mt-6 text-center">
     <div class="mb-6">
+      <font-awesome-icon :icon="['fab', 'linkedin']" />
       <p
         v-for="phrase in catchphrase"
         :key="phrase.text"
