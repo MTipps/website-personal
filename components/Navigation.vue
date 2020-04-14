@@ -26,37 +26,12 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'Navigation',
-  data () {
-    return {
-      navigationLinks: [
-        {
-          linkName: 'About Me',
-          linkRef: '/#about-me'
-        },
-        {
-          linkName: 'Skills',
-          linkRef: '/#skills'
-        },
-        {
-          linkName: 'Recent Work',
-          linkRef: '/#recent-work'
-        },
-        {
-          linkName: 'Blog',
-          linkRef: '/blog'
-        },
-        {
-          linkName: 'hey@megantipps.co.za',
-          linkRef: 'mailto:hey@megantipps.co.za'
-        }
-      ]
-    }
-  },
   computed: {
     ...mapState('navigation', [
       'myName',
       'myTitle',
-      'logo'
+      'logo',
+      'navigationLinks'
     ])
   },
   mounted () {
