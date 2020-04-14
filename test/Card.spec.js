@@ -1,6 +1,5 @@
 import { mount, RouterLinkStub } from '@vue/test-utils'
 import Vue from 'vue'
-import VueLazyload from 'vue-lazyload'
 import Card from '@/components/Card.vue'
 
 let wrapper
@@ -11,11 +10,6 @@ const techUsed = []
 const link = ''
 const linkText = ''
 const openNewTab = true
-
-const vueLazyLoad = Vue.use(VueLazyload, {
-  preLoad: 1,
-  attempt: 1
-})
 
 beforeEach(() => {
   wrapper = mount(Card, {
@@ -30,9 +24,6 @@ beforeEach(() => {
     },
     stubs: {
       NuxtLink: RouterLinkStub
-    },
-    directives: {
-      vueLazyLoad
     }
   })
 })

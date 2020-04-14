@@ -1,7 +1,6 @@
 import { mount, createLocalVue, RouterLinkStub } from '@vue/test-utils'
 import Vuex from 'vuex'
 import Vue from 'vue'
-import VueLazyload from 'vue-lazyload'
 import Navigation from '@/components/Navigation.vue'
 
 let wrapper
@@ -9,10 +8,6 @@ let store
 let state
 let actions
 const localVue = createLocalVue()
-const vueLazyLoad = Vue.use(VueLazyload, {
-  preLoad: 1,
-  attempt: 1
-})
 
 localVue.use(Vuex)
 
@@ -50,9 +45,6 @@ beforeEach(() => {
     localVue,
     stubs: {
       NuxtLink: RouterLinkStub
-    },
-    directives: {
-      vueLazyLoad
     }
   })
 })
