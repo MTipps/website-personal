@@ -1,7 +1,7 @@
 <template>
   <div class="rounded-lg shadow-lg max-w-sm mr-0 sm:mr-10 mb-6">
     <div class="flex justify-center">
-      <img v-lazy="image" alt="" class="rounded-t-lg object-cover object-center h-48">
+      <img :src="image" alt="" class="rounded-t-lg object-cover object-center h-48">
     </div>
     <div class="p-6">
       <p class="font-sans font-bold text-lg text-pink-600 pb-6">
