@@ -2,6 +2,8 @@
 
 # My Personal Website [megantipps.co.za](https://megantipps.co.za)
 
+TODO: Update tech used
+nuxt, contentful, sass, fontawesome
 ## Tech Used
 - [Nuxt.js](https://nuxtjs.org)
 - [Contentful](https://www.contentful.com/)
