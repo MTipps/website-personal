@@ -82,6 +82,26 @@
   height: $height;
 }
 
+// A simple mixin to give create a circle with or without a background color.
+/* Usage:
+  .square {
+    @include box(50px);
+  }
+
+  .rectangle {
+    @include box(100px, 50px);
+  }
+*/
+
+@mixin circle($width, $color) {
+  width: $width;
+  height: $width;
+  background: $color;
+  -webkit-border-radius: $width/2;
+  -moz-border-radius: $width/2;
+  border-radius: $width/2;
+}
+
 // CSS Opacity with fallback for IE8+.
 /* Usage:
   .fade {
