@@ -18,10 +18,6 @@ export const state = () => ({
     {
       linkName: 'Blog',
       linkRef: '/blog'
-    },
-    {
-      linkName: 'hey@megantipps.co.za',
-      linkRef: 'mailto:hey@megantipps.co.za'
     }
   ]
 })
