@@ -1,6 +1,7 @@
 @import 'abstracts/variables';
 @import 'abstracts/functions';
-@import 'abstracts/mixins';
+@import 'abstracts/mixins/mixins';
+@import 'abstracts/mixins/mixins-flex';
 
 @import 'base/reset';
 @import 'base/typography';

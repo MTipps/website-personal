@@ -56,9 +56,9 @@ export const actions = {
         commit('setTechStack', createTechStackObjectArray(rawTechStack))
         commit('setRecentWork', createRecentWorkObjectArray(rawRecentWork))
       }
-    }).catch((err) => {
+    }).catch((error_) => {
       // eslint-disable-next-line no-console
-      console.log('error', err)
+      console.log('error', error_)
     })
   }
 }
