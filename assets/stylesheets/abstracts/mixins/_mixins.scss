@@ -113,3 +113,20 @@
   $opacity-ie: $opacity * 100;
   filter: alpha(opacity = $opacity-ie); //IE8
 }
+
+
+// Adds a box shadow to an element
+/* Usage:
+   @include box-shadow(0, bu(2), bu(5), map-get($colours, 'spicy-mix-brown'));
+*/
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
