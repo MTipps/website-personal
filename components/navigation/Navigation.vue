@@ -1,5 +1,3 @@
-<!-- TODO: Check warnings in terminal and fix-->
-<!-- TODO: Add transition to mobile menu -->
 <template>
   <nav class="navigation">
     <navigation-my-info
