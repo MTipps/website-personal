@@ -40,9 +40,9 @@ export const actions = {
         commit('setCreatedByText', createdByText)
         commit('setCreatedWith', createParagraphArray(rawCreatedWith))
       }
-    }).catch((err) => {
+    }).catch((error_) => {
       // eslint-disable-next-line no-console
-      console.log('error', err)
+      console.log('error', error_)
     })
   }
 }

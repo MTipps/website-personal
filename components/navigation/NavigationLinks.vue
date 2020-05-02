@@ -60,8 +60,8 @@ export default {
     window.addEventListener('resize', this.onWindowResize)
   },
   methods: {
-    setSelectedNavLink (e) {
-      const selectedElement = e.target
+    setSelectedNavLink (event_) {
+      const selectedElement = event_.target
       const previousSelected = document.querySelectorAll('[active]')[0]
       previousSelected.removeAttribute('active')
       selectedElement.setAttribute('active', '')
