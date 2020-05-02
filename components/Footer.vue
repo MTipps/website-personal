@@ -23,7 +23,7 @@
     </div>
     <div>
       <p class="font-sans text-base text-white">
-        {{ createdByText }} &#169; {{ new Date().getFullYear() }}
+<!--        {{ createdByText }} &#169; {{ new Date().getFullYear() }}-->
       </p>
       <p
         v-for="phrase in createdWith"

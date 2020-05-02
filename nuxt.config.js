@@ -45,8 +45,6 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    // https://www.npmjs.com/package/@nuxtjs/moment
-    '@nuxtjs/moment',
     // https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv'
   ],

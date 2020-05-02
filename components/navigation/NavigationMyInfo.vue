@@ -18,7 +18,7 @@ export default {
   name: 'NavigationMyInfo',
   props: {
     myLogo: {
-      type: Image,
+      type: String,
       required: true
     },
     myName: {
