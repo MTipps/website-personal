@@ -38,6 +38,7 @@ export default {
     @include flexbox;
     @include flex-align-items(center);
     text-decoration: none;
+    padding: bu(20);
 
     &__logo-img {
       @include circle(bu(80), map-get($colours, 'primary-colour'));
@@ -51,7 +52,7 @@ export default {
     &__info-me {
       @include font(map-get($fonts, 'montserrat'), bu(16), map-get($colours, 'primary-colour'), normal, bu(16));
 
-      @include breakpoint(tablet) {
+      @include breakpoint(tablet-horizontal) {
         @include font(map-get($fonts, 'montserrat'), bu(20), map-get($colours, 'primary-colour'), normal, bu(16));
       }
     }

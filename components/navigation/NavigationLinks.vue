@@ -91,6 +91,8 @@ export default {
 
 <style lang="scss" scoped>
   .navigation-links {
+    padding: bu(20);
+
     &__container {
       @include flexbox;
 

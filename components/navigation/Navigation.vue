@@ -44,7 +44,7 @@ export default {
     box-shadow: 0 3px 1px -2px map-get($shadows, 'black-2'),
                 0 2px 2px 0 map-get($shadows, 'black-14'),
                 0 1px 5px 0 map-get($shadows, 'black-12');
-    padding: bu(20);
+    /*padding: bu(20);*/
     position: fixed;
     top: 0;
     z-index: 1;
