@@ -91,13 +91,15 @@ export default {
 
 <style lang="scss" scoped>
   .navigation-links {
+    padding: bu(20);
+
     &__container {
       @include flexbox;
 
       flex-direction: column;
       position: absolute;
       height: 100vh;
-      background: map-get($colours, 'tulip-tree-orange');
+      background: map-get($colours, 'primary-background-colour');
       top: bu(120);
       left: 0;
       right: 0;
@@ -118,7 +120,7 @@ export default {
       }
 
       .link {
-        @include font(map-get($fonts, 'montserrat'), bu(16), map-get($colours, 'hoki-blue'), normal, bu(16));
+        @include font(map-get($fonts, 'montserrat'), bu(16), map-get($colours, 'primary-colour'), normal, bu(16));
         display: block;
         padding: bu(20) bu(20) bu(20) bu(20);
         text-decoration: none;
@@ -129,13 +131,13 @@ export default {
 
         &[active],
         &:hover {
-          background: map-get($colours, 'hoki-blue');
-          color: map-get($colours, 'tulip-tree-orange');
+          background: map-get($colours, 'primary-colour');
+          color: map-get($colours, 'primary-background-colour');
 
           @include breakpoint(tablet) {
-            background: map-get($colours, 'tulip-tree-orange');
-            color: map-get($colours, 'hoki-blue');
-            border-bottom: bu(2) solid map-get($colours, 'hoki-blue');
+            background: map-get($colours, 'primary-background-colour');
+            color: map-get($colours, 'primary-colour');
+            border-bottom: bu(2) solid map-get($colours, 'primary-colour');
           }
         }
       }
@@ -146,7 +148,7 @@ export default {
 
       @include breakpoint(max-width, 768px) {
         display: block;
-        color: map-get($colours, 'hoki-blue');
+        color: map-get($colours, 'primary-colour');
         cursor: pointer;
       }
     }

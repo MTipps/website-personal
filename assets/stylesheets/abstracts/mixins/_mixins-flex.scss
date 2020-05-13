@@ -42,7 +42,7 @@
 //
 // http://w3.org/tr/css3-flexbox/#flex-direction-property
 
-@mixin flex-direction($value: row) {
+  @mixin flex-direction($value: row) {
   @if $value == row-reverse {
     -webkit-box-direction: reverse;
     -webkit-box-orient: horizontal;

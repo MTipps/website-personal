@@ -38,21 +38,22 @@ export default {
     @include flexbox;
     @include flex-align-items(center);
     text-decoration: none;
+    padding: bu(20);
 
     &__logo-img {
-      @include circle(bu(100), map-get($colours, 'bismark-blue'));
+      @include circle(bu(80), map-get($colours, 'primary-colour'));
       margin-right: bu(20);
 
-      @include breakpoint(max-width, 1024px) {
-        @include circle(bu(80), map-get($colours, 'bismark-blue'));
+      @include breakpoint(tablet) {
+        @include circle(bu(100), map-get($colours, 'primary-colour'));
       }
     }
 
     &__info-me {
-      @include font(map-get($fonts, 'montserrat'), bu(20), map-get($colours, 'hoki-blue'), normal, bu(16));
+      @include font(map-get($fonts, 'montserrat'), bu(16), map-get($colours, 'primary-colour'), normal, bu(16));
 
-      @include breakpoint(max-width, 1024px) {
-        @include font(map-get($fonts, 'montserrat'), bu(16), map-get($colours, 'hoki-blue'), normal, bu(16));
+      @include breakpoint(tablet-horizontal) {
+        @include font(map-get($fonts, 'montserrat'), bu(20), map-get($colours, 'primary-colour'), normal, bu(16));
       }
     }
 

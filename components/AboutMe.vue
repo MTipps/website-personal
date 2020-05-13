@@ -1,57 +1,53 @@
 <template>
   <section id="about-me" class="about-me">
-    <div class="wave" />
-    <p v-for="text in aboutMeText" :key="text.text" v-html="text.text" class="font-sans text-lg lg:text-3xl" />
+    <p class="about-me__paragraph">
+      Hi, I'm a <strong class="about-me__strong">front-end developer</strong>.
+    </p>
+    <p class="about-me__paragraph">
+      I produce <strong class="about-me__strong">high-quality</strong> websites and <strong class="about-me__strong">exceptional</strong> user experience.
+    </p>
+    <p class="about-me__paragraph">
+      Do you have a project, idea or problem you'd like to discuss?
+    </p>
+    <p class="about-me__paragraph">
+      Let's have a chat, <strong class="about-me__strong">hey@megantipps.co.za</strong>
+    </p>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'AboutMe',
-  props: {
-    aboutMeText: {
-      type: Array,
-      required: true
-    }
-  }
+  name: 'AboutMe'
 }
 </script>
 
 <style lang="scss" scoped>
   .about-me {
     position: relative;
-    background: map-get($colours, 'tulip-tree-orange');
-    height: 50vh;
-    margin-top: bu(140);
-  }
+    background: map-get($colours, 'primary-colour');
+    margin-top: bu(120);
+    padding: bu(50) bu(20);
 
-  .wave {
-    position: absolute;
-    height: 168px;
-    width: 100%;
-    background: map-get($colours, 'tulip-tree-orange');
-    bottom: 0;
-  }
+    @include breakpoint(tablet) {
+      margin-top: bu(140);
+    }
 
-  .wave::before, .wave::after {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-  }
+    &__paragraph {
+      @include font(map-get($fonts, 'roboto'), bu(20), map-get($shadows, 'black-68'), normal, bu(20));
+      margin-bottom: bu(15);
 
-  .wave::before {
-    width: 53.5%;
-    height: 110%;
-    background-color: map-get($colours, 'white');
-    right: 0;
-    top: 60%;
-  }
-  .wave::after {
-    width: 53.5%;
-    height: 100%;
-    background-color: map-get($colours, 'tulip-tree-orange');
-    left: 0;
-    top: 40%;
+      @include breakpoint(tablet) {
+        @include font(map-get($fonts, 'roboto'), bu(25), map-get($shadows, 'black-68'), normal, bu(25));
+      }
+    }
+
+    &__strong {
+      @include font(map-get($fonts, 'roboto'), bu(20), map-get($shadows, 'black-87'), bold, bu(20));
+      padding: 0 bu(5);
+
+      @include breakpoint(tablet) {
+        @include font(map-get($fonts, 'roboto'), bu(25), map-get($shadows, 'black-87'), bold, bu(25));
+      }
+    }
   }
 </style>

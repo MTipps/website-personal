@@ -39,10 +39,12 @@ export default {
     @include flexbox;
     @include flex-align-items(center);
     @include flex-justify-content(space-between);
-    @include box-shadow(0, bu(2), bu(5), map-get($colours, 'spicy-mix-brown'));
 
-    background: map-get($colours, 'tulip-tree-orange');
-    padding: bu(20);
+    background: map-get($colours, 'primary-background-colour');
+    box-shadow: 0 3px 1px -2px map-get($shadows, 'black-2'),
+                0 2px 2px 0 map-get($shadows, 'black-14'),
+                0 1px 5px 0 map-get($shadows, 'black-12');
+    /*padding: bu(20);*/
     position: fixed;
     top: 0;
     z-index: 1;
