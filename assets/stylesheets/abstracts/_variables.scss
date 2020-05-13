@@ -4,6 +4,7 @@ $fonts: (
 );
 
 $bright-sun-yellow: #FAD83B;
+$marigold-yellow: #FBE26D;
 $mine-shaft-grey: #2C2C2C;
 
 $colours: (
@@ -13,13 +14,16 @@ $colours: (
   'hoki-blue': #607E99,
   'spicy-mix-brown': #805246,
   'primary-colour': $bright-sun-yellow,
+  'secondary-colour': $marigold-yellow,
   'primary-background-colour': $mine-shaft-grey
 );
 
 $shadows: (
   'black-2': rgba(0, 0, 0, 0.2),
   'black-12': rgba(0, 0, 0, 0.12),
-  'black-14': rgba(0, 0, 0, 0.14)
+  'black-14': rgba(0, 0, 0, 0.14),
+  'black-68': rgba(0, 0, 0, 0.68),
+  'black-87': rgba(0, 0, 0, 0.87)
 );
 
 
