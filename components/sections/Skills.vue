@@ -1,7 +1,7 @@
 <template>
-  <div id="skills" class="pt-6 text-center">
-    <app-section-heading :header="techStackHeader" :sub-header="techStackSubHeader" />
-    <div class="pt-6 flex flex-wrap justify-center">
+  <section id="skills" class="skills">
+    <app-section-heading :header="techStackHeading.heading" :sub-header="techStackHeading.subHeading" />
+    <!--<div class="pt-6 flex flex-wrap justify-center">
       <div v-for="tech in techStack" :key="tech.techName" v-show="tech.techIcon !== ''">
         <div class="items-center rounded-lg shadow-lg w-full max-w-xs mr-0 sm:mr-10 mb-6 p-6">
           <div class="flex flex-col items-center">
@@ -17,35 +17,27 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </div>-->
+  </section>
 </template>
 
 <script>
-import SectionHeading from './SectionHeading'
-import Progressbar from './Progressbar'
-import Icon from './Icon'
+import { mapState } from 'vuex'
+import SectionHeading from '../ui/SectionHeading'
+// import Progressbar from './Progressbar'
+// import Icon from './Icon'
 
 export default {
   name: 'Skills',
   components: {
-    appSectionHeading: SectionHeading,
-    appProgressBar: Progressbar,
-    appIcon: Icon
+    appSectionHeading: SectionHeading
+    // appProgressBar: Progressbar,
+    // appIcon: Icon
   },
-  props: {
-    techStackHeader: {
-      type: String,
-      required: true
-    },
-    techStackSubHeader: {
-      type: String,
-      required: true
-    },
-    techStack: {
-      type: Array,
-      required: true
-    }
+  computed: {
+    ...mapState('techStack', [
+      'techStackHeading'
+    ])
   }
 }
 </script>
