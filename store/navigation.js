@@ -1,7 +1,7 @@
 export const state = () => ({
   myName: 'Megan Tipps',
   myTitle: 'Front-End Web Developer',
-  logo: '/logo_grey.png',
+  logo: '/avatar.svg',
   navigationLinks: [
     {
       linkName: 'About Me',

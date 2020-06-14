@@ -13,7 +13,7 @@
 <script>
 import { mapState } from 'vuex'
 import AboutMe from '../components/sections/AboutMe'
-import Skills from '../components/sections/Skills'
+import Skills from '../components/sections/skills/Skills'
 // import RecentWork from '../components/RecentWork'
 
 export default {

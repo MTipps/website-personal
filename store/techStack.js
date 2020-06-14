@@ -1,56 +1,65 @@
+// TODO: Add info for each teck
 export const state = () => ({
   techStackHeading: {
     heading: 'What can I do?',
     subHeading: 'Learning new languages and frameworks is what keeps me going. Here are a list of my current skills:'
   },
-  techStackLabels: {
+  techStackItems: {
     html: {
-      name: 'html',
-      techProgress: 80
+      techName: 'HTML',
+      techProgress: 80,
+      techInfo: 'Some info text.',
+      techLink: 'http://some.link',
+      fontAwesome: 'fa-html5'
     },
     css: {
-      name: 'css',
-      techProgress: 80
+      techName: 'CSS',
+      techProgress: 80,
+      techInfo: 'Some info text.',
+      techLink: 'http://some.link',
+      fontAwesome: 'fa-css3-alt'
     },
     sass: {
-      name: 'sass',
-      techProgress: 80
+      techName: 'SASS',
+      techProgress: 80,
+      techInfo: 'Some info text.',
+      techLink: 'http://some.link',
+      fontAwesome: 'fa-sass'
     },
     javascript: {
-      name: 'javascript',
-      techProgress: 80
-    },
-    jquery: {
-      name: 'jquery',
-      techProgress: 80
+      techName: 'Javascript',
+      techProgress: 80,
+      techInfo: 'Some info text.',
+      techLink: 'http://some.link',
+      fontAwesome: 'fa-js'
     },
     vuejs: {
-      name: 'vuejs',
-      techProgress: 50
-    },
-    nuxtjs: {
-      name: 'nuxtjs',
-      techProgress: 50
+      techName: 'VueJS',
+      techProgress: 50,
+      techInfo: 'Some info text.',
+      techLink: 'http://some.link',
+      fontAwesome: 'fa-vuejs'
     },
     react: {
-      name: 'react',
-      techProgress: 30
+      techName: 'React',
+      techProgress: 30,
+      techInfo: 'Some info text.',
+      techLink: 'http://some.link',
+      fontAwesome: 'fa-react'
     },
     angular: {
-      name: 'angular',
-      techProgress: 30
-    },
-    typescript: {
-      name: 'typescript',
-      techProgress: 50
+      techName: 'Angular',
+      techProgress: 30,
+      techInfo: 'Some info text.',
+      techLink: 'http://some.link',
+      fontAwesome: 'fa-angular'
     },
     wordpress: {
-      name: 'wordpress',
-      techProgress: 70
-    },
-    contentful: {
-      name: 'contentful',
-      techProgress: 70
+      techName: 'Wordpress',
+      techProgress: 70,
+      techInfo: 'Some info text.',
+      techLink: 'http://some.link',
+      fontAwesome: 'fa-wordpress'
     }
   }
 })
