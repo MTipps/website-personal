@@ -19,11 +19,11 @@
         </a>
       </div>
     </div>
-    <font-awesome-icon
-      :icon="['fas', 'bars']"
-      @click="toggleMobileNavigationMenu(!toggleMobileNavigation)"
-      class="navigation-links__mobile-icon"
-    />
+<!--    <font-awesome-icon-->
+<!--      :icon="['fas', 'bars']"-->
+<!--      @click="toggleMobileNavigationMenu(!toggleMobileNavigation)"-->
+<!--      class="navigation-links__mobile-icon"-->
+<!--    />-->
   </div>
 </template>
 
@@ -89,80 +89,36 @@ export default {
 }
 </script>
 
+<!-- TODO: Update with correct mixins -->
 <style lang="scss" scoped>
   .navigation-links {
-    padding: bu(20);
+    align-self: center;
+    justify-self: end;
 
     &__container {
-      @include flexbox;
-
-      flex-direction: column;
-      position: absolute;
-      height: 100vh;
-      background: map-get($colours, 'primary-background-colour');
-      top: bu(120);
-      left: 0;
-      right: 0;
-      bottom: 0;
-
-      @include breakpoint(tablet) {
-        flex-direction: row;
-        position: relative;
-        height: auto;
-        top: 0;
-        padding: 0;
-      }
+      display: flex;
 
       .link-item {
-        @include breakpoint(tablet) {
-          margin-right: bu(20);
-        }
-      }
+        font: bold 16px/21px map-get($fonts, 'pt-sans-narrow');
+        text-transform: uppercase;
+        margin-left: 25px;
 
-      .link {
-        @include font(map-get($fonts, 'montserrat'), bu(16), map-get($colours, 'primary-colour'), normal, bu(16));
-        display: block;
-        padding: bu(20) bu(20) bu(20) bu(20);
-        text-decoration: none;
+        .link {
+          color: map-get($colours, 'colour-slate-gray');
+          text-decoration: none;
+          padding: 4px 10px;
 
-        @include breakpoint(tablet) {
-          padding: 0;
-        }
+          &:hover {
+            border-radius: 4px;
+            background-color: map-get($colours, 'colour-red-ribbon');
+            color: map-get($colours, 'colour-merino');
+          }
 
-        &[active],
-        &:hover {
-          background: map-get($colours, 'primary-colour');
-          color: map-get($colours, 'primary-background-colour');
-
-          @include breakpoint(tablet) {
-            background: map-get($colours, 'primary-background-colour');
-            color: map-get($colours, 'primary-colour');
-            border-bottom: bu(2) solid map-get($colours, 'primary-colour');
+          &[active] {
+            border-bottom: 2px solid map-get($colours, 'colour-red-ribbon');
           }
         }
       }
     }
-
-    &__mobile-icon {
-      display: none;
-
-      @include breakpoint(max-width, 768px) {
-        display: block;
-        color: map-get($colours, 'primary-colour');
-        cursor: pointer;
-      }
-    }
-  }
-
-  .navigation-closed {
-    display: none;
-
-    @include breakpoint(tablet) {
-      @include flexbox;
-    }
-  }
-
-  .navigation-open {
-    @include flexbox;
   }
 </style>

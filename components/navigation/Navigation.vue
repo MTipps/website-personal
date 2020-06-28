@@ -1,10 +1,11 @@
 <template>
   <nav class="navigation">
     <navigation-my-info
-      :my-logo="logo"
       :my-name="myName"
       :my-title="myTitle"
     />
+
+    <img :src="logo" alt="Black and White photo of Megan Tipps as a logo" class="navigation__logo">
 
     <navigation-links
       :navigation-links="navigationLinks"
@@ -34,20 +35,19 @@ export default {
 }
 </script>
 
+<!-- TODO: Update with correct mixins -->
 <style lang="scss" scoped>
   .navigation {
-    @include flexbox;
-    @include flex-align-items(center);
-    @include flex-justify-content(space-between);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: map-get($colours, 'colour-merino');
+    padding: 10px 60px;
 
-    background: map-get($colours, 'primary-background-colour');
-    box-shadow: 0 3px 1px -2px map-get($shadows, 'black-2'),
-                0 2px 2px 0 map-get($shadows, 'black-14'),
-                0 1px 5px 0 map-get($shadows, 'black-12');
-    /*padding: bu(20);*/
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    width: 100%;
+    &__logo {
+      width: 88px;
+      height: 94px;
+      justify-self: center;
+      align-self: center;
+    }
   }
 </style>
