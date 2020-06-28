@@ -2,19 +2,19 @@
   <div class="default">
     <app-navigation />
     <nuxt class="default__slot" />
-    <app-footer v-show="false" />
+<!--    <app-footer v-show="false" />-->
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 import Navigation from '../components/navigation/Navigation'
-import Footer from '../components/Footer'
+// import Footer from '../components/Footer'
 
 export default {
   components: {
-    appNavigation: Navigation,
-    appFooter: Footer
+    appNavigation: Navigation
+    // appFooter: Footer
   },
   asyncData ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)

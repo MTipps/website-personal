@@ -41,11 +41,11 @@ export default {
     padding: bu(20);
 
     &__logo-img {
-      @include circle(bu(80), map-get($colours, 'primary-colour'));
+      height: bu(80);
       margin-right: bu(20);
 
       @include breakpoint(tablet) {
-        @include circle(bu(100), map-get($colours, 'primary-colour'));
+        height: bu(100);
       }
     }
 

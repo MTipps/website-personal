@@ -1,55 +1,65 @@
+// TODO: Add info for each teck
 export const state = () => ({
-  techStackLabels: {
+  techStackHeading: {
+    heading: 'What can I do?',
+    subHeading: 'Learning new languages and frameworks is what keeps me going. Here are a list of my current skills:'
+  },
+  techStackItems: {
     html: {
-      name: 'html'
+      techName: 'HTML',
+      techProgress: 80,
+      techInfo: 'Some info text.',
+      techLink: 'http://some.link',
+      fontAwesome: 'fa-html5'
     },
     css: {
-      name: 'css'
+      techName: 'CSS',
+      techProgress: 80,
+      techInfo: 'Some info text.',
+      techLink: 'http://some.link',
+      fontAwesome: 'fa-css3-alt'
     },
     sass: {
-      name: 'sass'
+      techName: 'SASS',
+      techProgress: 80,
+      techInfo: 'Some info text.',
+      techLink: 'http://some.link',
+      fontAwesome: 'fa-sass'
     },
     javascript: {
-      name: 'javascript'
-    },
-    jquery: {
-      name: 'jquery'
+      techName: 'Javascript',
+      techProgress: 80,
+      techInfo: 'Some info text.',
+      techLink: 'http://some.link',
+      fontAwesome: 'fa-js'
     },
     vuejs: {
-      name: 'vuejs'
-    },
-    nuxtjs: {
-      name: 'nuxtjs'
+      techName: 'VueJS',
+      techProgress: 50,
+      techInfo: 'Some info text.',
+      techLink: 'http://some.link',
+      fontAwesome: 'fa-vuejs'
     },
     react: {
-      name: 'react'
+      techName: 'React',
+      techProgress: 30,
+      techInfo: 'Some info text.',
+      techLink: 'http://some.link',
+      fontAwesome: 'fa-react'
     },
     angular: {
-      name: 'angular'
-    },
-    typescript: {
-      name: 'typescript'
+      techName: 'Angular',
+      techProgress: 30,
+      techInfo: 'Some info text.',
+      techLink: 'http://some.link',
+      fontAwesome: 'fa-angular'
     },
     wordpress: {
-      name: 'wordpress'
-    },
-    contentful: {
-      name: 'contentful'
-    },
-    linkedin: {
-      name: 'linkedin'
-    },
-    github: {
-      name: 'github'
-    },
-    stackoverflow: {
-      name: 'stackoverflow'
-    },
-    codepen: {
-      name: 'codepen'
-    },
-    email: {
-      name: 'email'
+      techName: 'Wordpress',
+      techProgress: 70,
+      techInfo: 'Some info text.',
+      techLink: 'http://some.link',
+      fontAwesome: 'fa-wordpress'
     }
   }
 })
