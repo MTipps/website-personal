@@ -1,5 +1,3 @@
-<!-- TODO: Add animation to progressbar -->
-
 <template>
   <div id="card-skill" class="card-skill">
     <div class="card-skill__header">
@@ -57,9 +55,6 @@ export default {
     padding: 20px;
     margin-right: 10px;
     width: 300px;
-    box-shadow: 0 3px 1px -2px map-get($shadows, 'black-2'),
-                0 2px 2px 0 map-get($shadows, 'black-14'),
-                0 1px 5px 0 map-get($shadows, 'black-12');
 
     &__header {
 
