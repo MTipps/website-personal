@@ -4,20 +4,24 @@ export const state = () => ({
   logo: '/avatar.svg',
   navigationLinks: [
     {
-      linkName: 'About Me',
-      linkRef: '/#about-me'
+      linkName: 'Home',
+      linkRef: '/'
     },
     {
       linkName: 'Skills',
-      linkRef: '/#skills'
+      linkRef: '/skills'
     },
     {
-      linkName: 'Recent Work',
-      linkRef: '/#recent-work'
+      linkName: 'Projects',
+      linkRef: '/projects'
     },
     {
       linkName: 'Blog',
       linkRef: '/blog'
+    },
+    {
+      linkName: 'Contact Me',
+      linkRef: '/#contact-me'
     }
   ]
 })
