@@ -1,20 +1,21 @@
+<!-- TODO: Remove unused code -->
 <template>
   <div class="default">
     <app-navigation />
     <nuxt class="default__slot" />
-<!--    <app-footer v-show="false" />-->
+    <app-footer />
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 import Navigation from '../components/navigation/Navigation'
-// import Footer from '../components/Footer'
+import Footer from '../components/Footer'
 
 export default {
   components: {
-    appNavigation: Navigation
-    // appFooter: Footer
+    appNavigation: Navigation,
+    appFooter: Footer
   },
   asyncData ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
@@ -30,7 +31,7 @@ export default {
 
 <style lang="scss">
   body {
-    background-color: map-get($colours, 'primary-background-colour');
+    background-color: map-get($colours, 'colour-merino');
   }
 
   .default {
