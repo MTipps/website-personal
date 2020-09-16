@@ -1,17 +1,17 @@
 <template>
   <section id="about-me" class="about-me">
-    <p class="about-me__paragraph">
-      Hi, I'm a <strong class="about-me__strong">front-end developer</strong>.
-    </p>
-    <p class="about-me__paragraph">
-      I produce <strong class="about-me__strong">high-quality</strong> websites and <strong class="about-me__strong">exceptional</strong> user experience.
-    </p>
-    <p class="about-me__paragraph">
+    <div class="about-me__paragraph">
+      Hi, I'm a <span class="about-me__strong">front-end developer</span>.
+    </div>
+    <span class="about-me__paragraph">
+      I produce <span class="about-me__strong">high-quality</span> websites and <span class="about-me__strong">exceptional</span> user experience.
+    </span>
+    <span class="about-me__paragraph">
       Do you have a project, idea or problem you'd like to discuss?
-    </p>
-    <p class="about-me__paragraph">
-      Let's have a chat, <strong class="about-me__strong">hey@megantipps.co.za</strong>
-    </p>
+    </span>
+    <span class="about-me__paragraph">
+      Let's have a chat, <span class="about-me__strong">hey@megantipps.co.za</span>.
+    </span>
   </section>
 </template>
 
@@ -23,31 +23,21 @@ export default {
 
 <style lang="scss" scoped>
   .about-me {
-    position: relative;
-    background: map-get($colours, 'primary-colour');
-    margin-top: bu(120);
-    padding: bu(50) bu(20);
-
-    @include breakpoint(tablet) {
-      margin-top: bu(140);
-    }
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 30px;
+    margin: 60px;
 
     &__paragraph {
-      @include font(map-get($fonts, 'roboto'), bu(20), map-get($shadows, 'black-68'), normal, bu(20));
-      margin-bottom: bu(15);
-
-      @include breakpoint(tablet) {
-        @include font(map-get($fonts, 'roboto'), bu(25), map-get($shadows, 'black-68'), normal, bu(25));
-      }
+      font: normal 48px/62px map-get($fonts, 'pt-sans');
+      color: map-get($colours, 'colour-slate-gray');
     }
 
     &__strong {
-      @include font(map-get($fonts, 'roboto'), bu(20), map-get($shadows, 'black-87'), bold, bu(20));
-      padding: 0 bu(5);
-
-      @include breakpoint(tablet) {
-        @include font(map-get($fonts, 'roboto'), bu(25), map-get($shadows, 'black-87'), bold, bu(25));
-      }
+      font: bold 48px/62px map-get($fonts, 'pt-sans-narrow');
+      background: linear-gradient(transparent 65%, #EBA63F 35%);
+      background-size: 100% 44px;
     }
   }
 </style>

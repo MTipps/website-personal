@@ -39,7 +39,7 @@ export default {
 <style lang="scss" scoped>
   .navigation {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 90px 1fr;
     background-color: map-get($colours, 'colour-merino');
     padding: 10px 60px;
 
