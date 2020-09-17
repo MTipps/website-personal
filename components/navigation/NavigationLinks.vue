@@ -89,33 +89,32 @@ export default {
 }
 </script>
 
-<!-- TODO: Update with correct mixins -->
 <style lang="scss" scoped>
   .navigation-links {
     align-self: center;
     justify-self: end;
 
     &__container {
-      display: flex;
+      @include flexbox;
 
       .link-item {
-        font: bold 16px/21px map-get($fonts, 'pt-sans-narrow');
+        @include font(map-get($fonts, 'pt-sans-narrow'), bu(16), bu(21), bold);
         text-transform: uppercase;
-        margin-left: 25px;
+        margin-left: bu(25);
 
         .link {
           color: map-get($colours, 'colour-slate-gray');
           text-decoration: none;
-          padding: 4px 10px;
+          padding: bu(4) bu(10);
 
           &:hover {
-            border-radius: 4px;
+            border-radius: bu(4);
             background-color: map-get($colours, 'colour-red-ribbon');
             color: map-get($colours, 'colour-merino');
           }
 
           &[active] {
-            border-bottom: 2px solid map-get($colours, 'colour-red-ribbon');
+            border-bottom: bu(2) solid map-get($colours, 'colour-red-ribbon');
           }
         }
       }

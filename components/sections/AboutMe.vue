@@ -26,18 +26,17 @@ export default {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
-    row-gap: 30px;
-    margin: 60px;
+    row-gap: bu(30);
+    margin: bu(60);
 
     &__paragraph {
-      font: normal 48px/62px map-get($fonts, 'pt-sans');
-      color: map-get($colours, 'colour-slate-gray');
+      @include font(map-get($fonts, 'pt-sans'), bu(48), bu(62), normal, map-get($colours, 'colour-slate-gray'));
     }
 
     &__strong {
-      font: bold 48px/62px map-get($fonts, 'pt-sans-narrow');
+      @include font(map-get($fonts, 'pt-sans-narrow'), bu(48), bu(62), bold);
       background: linear-gradient(transparent 65%, #EBA63F 35%);
-      background-size: 100% 44px;
+      background-size: 100% bu(44);
     }
   }
 </style>
