@@ -1,7 +1,7 @@
 <template>
   <section id="about-me" class="about-me">
     <div class="about-me__paragraph">
-      Hi, I'm a <span class="about-me__strong">front-end developer</span>.
+      Hi, I'm a <span class="about-me__strong">front-end web developer</span>.
     </div>
     <span class="about-me__paragraph">
       I produce <span class="about-me__strong">high-quality</span> websites and <span class="about-me__strong">exceptional</span> user experience.
