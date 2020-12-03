@@ -40,15 +40,14 @@ export default {
 }
 </script>
 
-<!-- TODO: Update with correct mixins -->
 <style lang="scss" scoped>
 .footer {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
-  row-gap: 30px;
+  row-gap: bu(30);
   background-color: map-get($colours, 'colour-slate-gray');
-  padding: 30px;
+  padding: bu(30);
 
   &__motto,
   &__social-media,
@@ -59,8 +58,7 @@ export default {
 
   &__motto {
     .motto-text {
-      font: bold 18px/23px map-get($fonts, 'pt-sans');
-      color: map-get($colours, 'colour-merino');
+      @include font(map-get($fonts, 'pt-sans'), bu(18), bu(23), bold, map-get($colours, 'colour-merino'));
       text-align: center;
     }
   }
@@ -68,7 +66,7 @@ export default {
   &__social-media {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 20px;
+    column-gap: bu(20);
 
     .social-media-icon {
       color: map-get($colours, 'colour-tulip-tree');
@@ -81,12 +79,11 @@ export default {
 
   &__copyright {
     .copyright-text {
-      font: normal 12px/13px map-get($fonts, 'pt-sans');
-      color: map-get($colours, 'colour-merino');
+      @include font(map-get($fonts, 'pt-sans'), bu(12), bu(13), normal, map-get($colours, 'colour-merino'));
       text-align: center;
 
       &:first-of-type {
-        margin-bottom: 5px;
+        margin-bottom: bu(5);
       }
     }
 

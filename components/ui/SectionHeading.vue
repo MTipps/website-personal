@@ -33,21 +33,14 @@ export default {
   padding: bu(40) bu(20);
 
   &__header {
-    @include font(map-get($fonts, 'roboto'), bu(20), map-get($colours, 'primary-colour'), bold, bu(30));
-
-    @include breakpoint(tablet) {
-      @include font(map-get($fonts, 'roboto'), bu(30), map-get($colours, 'primary-colour'), bold, bu(30));
-    }
+    @include font(map-get($fonts, 'pt-sans-narrow'), bu(36), bu(47), bold, map-get($colours, 'colour-tulip-tree'));
+    text-transform: uppercase;
   }
 
   &__sub-header {
-    @include font(map-get($fonts, 'montserrat'), bu(13), map-get($colours, 'primary-colour'), normal, bu(20));
+    @include font(map-get($fonts, 'pt-sans'), bu(18), bu(23), normal, map-get($colours, 'colour-slate-gray'));
     margin-top: bu(10);
     text-align: center;
-
-    @include breakpoint(tablet) {
-      @include font(map-get($fonts, 'montserrat'), bu(15), map-get($colours, 'primary-colour'), normal, bu(20));
-    }
   }
 }
 </style>

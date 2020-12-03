@@ -36,12 +36,12 @@ export default {
     }
 
     &__name {
-      font: bold 24px/31px map-get($fonts, 'pt-sans-narrow');
+      @include font(map-get($fonts, 'pt-sans-narrow'), bu(24), bu(31), bold);
       margin-bottom: 6px;
     }
 
     &__title {
-      font: normal 16px/21px map-get($fonts, 'pt-sans');
+      @include font(map-get($fonts, 'pt-sans'), bu(16), bu(21), normal);
     }
   }
 </style>
