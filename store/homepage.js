@@ -52,13 +52,14 @@ export const actions = {
         commit('setRecentWorkHeader', recentWorkHeader)
         commit('setRecentWorkSubHeader', recentWorkSubHeader)
 
+        console.log(rawAboutMe)
         commit('setAboutMeText', createAboutMeArray(rawAboutMe))
         commit('setTechStack', createTechStackObjectArray(rawTechStack))
         commit('setRecentWork', createRecentWorkObjectArray(rawRecentWork))
       }
-    }).catch((err) => {
+    }).catch((error_) => {
       // eslint-disable-next-line no-console
-      console.log('error', err)
+      console.log('error', error_)
     })
   }
 }

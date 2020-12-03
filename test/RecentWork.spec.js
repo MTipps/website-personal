@@ -1,7 +1,6 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 import Vue from 'vue'
-import VueLazyload from 'vue-lazyload'
 import RecentWork from '@/components/RecentWork.vue'
 
 let wrapper
@@ -24,10 +23,6 @@ const recentWorks = [
     link: ''
   }
 ]
-const vueLazyLoad = Vue.use(VueLazyload, {
-  preLoad: 1,
-  attempt: 1
-})
 
 localVue.use(Vuex)
 
@@ -104,9 +99,6 @@ beforeEach(() => {
       recentWorkHeader,
       recentWorkSubHeader,
       recentWorks
-    },
-    directives: {
-      vueLazyLoad
     }
   })
 })

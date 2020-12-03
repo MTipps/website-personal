@@ -31,13 +31,13 @@ export default {
   ** Global CSS
   */
   css: [
+    { src: '@/assets/stylesheets/main.scss', lang: 'scss' }
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~plugins/ga.js', mode: 'client' },
-    '@/plugins/vue-lazyload'
+    { src: '~plugins/ga.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -45,10 +45,6 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss',
-    // https://www.npmjs.com/package/@nuxtjs/moment
-    '@nuxtjs/moment',
     // https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv'
   ],
@@ -56,8 +52,26 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/style-resources',
+    [
+      'nuxt-fontawesome', {
+        imports: [
+          {
+            set: '@fortawesome/free-solid-svg-icons',
+            icons: ['fas']
+          },
+          {
+            set: '@fortawesome/free-brands-svg-icons',
+            icons: ['fab']
+          }
+        ]
+      }
+    ]
   ],
+  styleResources: {
+    scss: ['./assets/stylesheets/*.scss']
+  },
   /*
   ** Build configuration
   */
