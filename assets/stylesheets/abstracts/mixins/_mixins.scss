@@ -1,0 +1,132 @@
+// Sass Mixins
+
+// Breakpoints uses a mobile first approach
+/** Usage:
+  @include breakpoint(tablet) {}
+  @include breakpoint(min-width, 1192px) {}
+  @include between-breakpoints(0, 1024px) {}
+**/
+@mixin breakpoint($point, $value: 0) {
+  @if $point == mobile {
+    @media (min-width: 320px) {
+      @content;
+    }
+  } @else if $point == mobile-horizontal {
+    @media (min-width: 480px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == tablet-horizontal {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media (min-width: 1280px) {
+      @content;
+    }
+  } @else if $point == desktop-wide {
+    @media (min-width: 1500px) {
+      @content;
+    }
+  } @else {
+    @media ($point: $value) {
+      @content;
+    }
+  }
+}
+
+@mixin between-breakpoints($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+// Used to add fonts where needed
+/* Usage:
+  @include font(map.get($fonts, 'roboto'))
+  @include font(map.get($fonts, 'montserrat'), bu(12), $white, normal, 1)
+*/
+@mixin font($type, $size: false, $lh: false, $weight: false, $colour: false) {
+  font-family: $type, Helvetica, Arial, sans-serif;
+  @if $size { font-size: $size; }
+  @if $colour { color: $colour; }
+  @if $weight { font-weight: $weight; }
+  @if $lh { line-height: $lh; }
+}
+
+// Adds an ellipsis (…) to the end of text
+/* Usage:
+  @include text-shorten()
+*/
+@mixin text-shorten {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// A simple mixin to give dimensions to a box.
+/* Usage:
+  .square {
+    @include box(50px);
+  }
+
+  .rectangle {
+    @include box(100px, 50px);
+  }
+*/
+@mixin box($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+// A simple mixin to give create a circle with or without a background color.
+/* Usage:
+  .square {
+    @include box(50px);
+  }
+
+  .rectangle {
+    @include box(100px, 50px);
+  }
+*/
+
+@mixin circle($width, $color) {
+  width: $width;
+  height: $width;
+  background: $color;
+  -webkit-border-radius: $width/2;
+  -moz-border-radius: $width/2;
+  border-radius: $width/2;
+}
+
+// CSS Opacity with fallback for IE8+.
+/* Usage:
+  .fade {
+    @include opacity(.4);
+  }
+*/
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity = $opacity-ie); //IE8
+}
+
+
+// Adds a box shadow to an element
+/* Usage:
+   @include box-shadow(0, bu(2), bu(5), map-get($colours, 'spicy-mix-brown'));
+*/
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}

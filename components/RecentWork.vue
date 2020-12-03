@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import SectionHeading from './SectionHeading'
+import SectionHeading from './ui/SectionHeading'
 import Card from './Card'
 
 export default {

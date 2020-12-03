@@ -1,0 +1,17 @@
+$base-font-size: 16;
+$base-font-size-px: $base-font-size * 1px;
+$base-unit: 8;
+
+/**
+  Calculate base unit. Add your pixel value, without the px unit, and your value will be calculated to rem.
+  Usage:
+  padding: bu(16)
+  font-size: bu(50)
+**/
+@function bu($amount) {
+  @if unitless($amount) {
+    @return (($base-unit * $amount/$base-font-size) * 1rem) / $base-unit;
+  } @else {
+    @error "Base unit parameters must be unitless";
+  }
+}
