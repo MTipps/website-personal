@@ -26,17 +26,29 @@ export default {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
-    row-gap: bu(30);
+    row-gap: bu(15);
     margin: bu(60);
 
+    @include breakpoint(tablet) {
+      row-gap: bu(30);
+    }
+
     &__paragraph {
-      @include font(map-get($fonts, 'pt-sans'), bu(48), bu(62), normal, map-get($colours, 'colour-slate-gray'));
+      @include font(map-get($fonts, 'pt-sans'), bu(30), bu(30), normal, map-get($colours, 'colour-slate-gray'));
+
+      @include breakpoint(tablet) {
+        @include font(map-get($fonts, 'pt-sans'), bu(48), bu(62), normal, map-get($colours, 'colour-slate-gray'));
+      }
     }
 
     &__strong {
-      @include font(map-get($fonts, 'pt-sans-narrow'), bu(48), bu(62), bold);
+      @include font(map-get($fonts, 'pt-sans-narrow'), bu(30), bu(30), bold);
       background: linear-gradient(transparent 65%, #EBA63F 35%);
       background-size: 100% bu(44);
+
+      @include breakpoint(tablet) {
+        @include font(map-get($fonts, 'pt-sans-narrow'), bu(48), bu(62), bold);
+      }
     }
   }
 </style>

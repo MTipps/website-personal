@@ -36,12 +36,20 @@ export default {
     }
 
     &__name {
-      @include font(map-get($fonts, 'pt-sans-narrow'), bu(24), bu(31), bold);
-      margin-bottom: 6px;
+      @include font(map-get($fonts, 'pt-sans-narrow'), bu(20), bu(31), bold);
+
+      @include breakpoint(desktop) {
+        @include font(map-get($fonts, 'pt-sans-narrow'), bu(24), bu(31), bold);
+        margin-bottom: 6px;
+      }
     }
 
     &__title {
-      @include font(map-get($fonts, 'pt-sans'), bu(16), bu(21), normal);
+      @include font(map-get($fonts, 'pt-sans'), bu(12), bu(21), normal);
+
+      @include breakpoint(desktop) {
+        @include font(map-get($fonts, 'pt-sans'), bu(16), bu(21), normal);
+      }
     }
   }
 </style>

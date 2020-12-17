@@ -1,24 +1,24 @@
 <!-- TODO: Remove unused code -->
 <template>
   <div class="default">
-    <!--<app-navigation />
+    <app-navigation />
     <nuxt class="default__slot" />
-    <app-footer />-->
-    <app-maintenance></app-maintenance>
+    <app-footer />
+    <!--<app-maintenance></app-maintenance>-->
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-// import Navigation from '../components/navigation/Navigation'
-// import Footer from '../components/Footer'
-import Maintenance from '@/components/Maintenance'
+import Navigation from '../components/navigation/Navigation'
+import Footer from '../components/Footer'
+// import Maintenance from '@/components/Maintenance'
 
 export default {
   components: {
-    // appNavigation: Navigation,
-    // appFooter: Footer
-    appMaintenance: Maintenance
+    appNavigation: Navigation,
+    appFooter: Footer
+    // appMaintenance: Maintenance
   },
   asyncData ({ params, error }) {
     return axios.get(`https://my-api/posts/${params.id}`)
