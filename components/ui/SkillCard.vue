@@ -44,6 +44,7 @@ export default {
     .header-icon {
       margin-bottom: bu(20);
       color: map-get($colours, 'colour-slate-gray');
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
       &:hover {
         color: map-get($colours, 'colour-tulip-tree');
