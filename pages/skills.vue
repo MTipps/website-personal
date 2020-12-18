@@ -9,9 +9,6 @@
       <app-skill-card
         v-for="techStackItem in techStackItems"
         :skill-title="techStackItem.techName"
-        :skill-info="techStackItem.techInfo"
-        :skill-link="techStackItem.techLink"
-        :skill-progress="techStackItem.techProgress"
         :skill-icon="techStackItem.fontAwesome"
       />
     </div>
@@ -41,8 +38,15 @@ export default {
 <style lang="scss" scoped>
   .skills {
     &__cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      @include flexbox;
+      @include flex-justify-content(center);
+      @include flex-align-items(center);
+      @include flex-wrap(wrap);
+      padding: 0 bu(60);
+
+      @include breakpoint(tablet) {
+        padding: 0 bu(60);
+      }
     }
   }
 </style>
