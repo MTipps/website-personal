@@ -21,7 +21,7 @@ import SectionHeading from '~/components/ui/SectionHeading'
 import SkillCard from '~/components/ui/SkillCard'
 
 export default {
-  name: 'skills',
+  name: 'Skills',
   components: {
     appSectionHeading: SectionHeading,
     appSkillCard: SkillCard
@@ -36,17 +36,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .skills {
-    &__cards {
-      @include flexbox;
-      @include flex-justify-content(center);
-      @include flex-align-items(center);
-      @include flex-wrap(wrap);
-      padding: 0 bu(60);
+.skills {
+  &__cards {
+    @include flexbox;
+    @include flex-justify-content(center);
+    @include flex-align-items(center);
+    @include flex-wrap(wrap);
+    padding: 0 bu(60);
 
-      @include breakpoint(tablet) {
-        padding: 0 bu(60);
-      }
+    @include breakpoint(tablet) {
+      padding: 0 bu(60);
     }
   }
+}
 </style>
