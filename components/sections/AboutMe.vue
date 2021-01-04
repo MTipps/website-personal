@@ -30,14 +30,14 @@ export default {
     margin: bu(60);
 
     @include breakpoint(tablet) {
-      row-gap: bu(30);
+      row-gap: bu(15);
     }
 
     &__paragraph {
       @include font(map-get($fonts, 'pt-sans'), bu(30), bu(30), normal, map-get($colours, 'colour-slate-gray'));
 
       @include breakpoint(tablet) {
-        @include font(map-get($fonts, 'pt-sans'), bu(40), bu(62), normal, map-get($colours, 'colour-slate-gray'));
+        @include font(map-get($fonts, 'pt-sans'), bu(38), bu(62), normal, map-get($colours, 'colour-slate-gray'));
       }
     }
 
@@ -47,7 +47,7 @@ export default {
       background-size: 100% bu(44);
 
       @include breakpoint(tablet) {
-        @include font(map-get($fonts, 'pt-sans-narrow'), bu(40), bu(62), bold);
+        @include font(map-get($fonts, 'pt-sans-narrow'), bu(38), bu(62), bold);
       }
     }
   }

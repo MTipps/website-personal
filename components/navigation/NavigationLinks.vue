@@ -18,18 +18,33 @@
           {{ link.linkName }}
         </a>
       </div>
+      <div class="link-item">
+        <a
+          href="#"
+          @click="$refs.contactMe.openModal()"
+          class="link"
+        >
+          Contact Me
+        </a>
+      </div>
     </div>
     <font-awesome-icon
       :icon="['fas', toggleMobileNavigation ? 'times' : 'bars']"
       @click="toggleMobileNavigationMenu(!toggleMobileNavigation)"
       class="navigation-links__mobile-icon"
     />
+    <contact-me ref="contactMe"></contact-me>
   </div>
 </template>
 
 <script>
+import ContactMe from '~/components/modals/ContactMe'
+
 export default {
   name: 'NavigationLinks',
+  components: {
+    ContactMe
+  },
   props: {
     navigationLinks: {
       type: Array,
@@ -98,6 +113,7 @@ export default {
           color: map-get($colours, 'colour-slate-gray');
           text-decoration: none;
           padding: bu(4) bu(10);
+          outline: none;
 
           &:hover {
             display: block;

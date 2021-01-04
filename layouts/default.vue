@@ -1,9 +1,9 @@
 <!-- TODO: Remove unused code -->
 <template>
   <div class="default">
-    <app-navigation />
+    <section-navigation />
     <nuxt class="default__slot" />
-    <app-footer />
+    <section-footer />
     <!--<app-maintenance></app-maintenance>-->
   </div>
 </template>
@@ -16,8 +16,8 @@ import Footer from '../components/Footer'
 
 export default {
   components: {
-    appNavigation: Navigation,
-    appFooter: Footer
+    sectionNavigation: Navigation,
+    sectionFooter: Footer
     // appMaintenance: Maintenance
   },
   asyncData ({ params, error }) {
@@ -28,6 +28,9 @@ export default {
       .catch((error_) => {
         error({ statusCode: 404, message: 'Post not found' })
       })
+  },
+  methods: {
+
   }
 }
 </script>
