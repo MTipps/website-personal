@@ -1,22 +1,26 @@
 <template>
   <transition name="fade">
     <div v-if="show" class="contact-me">
-      <div @click="closeModal()" class="contact-me__backdrop" />
+      <div class="contact-me__backdrop" @click="closeModal()" />
 
       <div class="contact-me__dialog">
         <div class="contact-me__header">
-          <div class="header-title">Please fill in your details</div>
+          <div class="header-title">
+            Please fill in your details
+          </div>
           <font-awesome-icon
             :icon="['fas', 'times']"
-            @click="closeModal()"
             class="header-close"
+            @click="closeModal()"
           />
         </div>
         <div class="contact-me__body">
 
         </div>
         <div class="contact-me__footer">
-          <button class="footer-button">Send</button>
+          <button class="footer-button">
+            Send
+          </button>
         </div>
       </div>
     </div>

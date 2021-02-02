@@ -1,8 +1,12 @@
 <template>
   <footer class="footer">
     <div class="footer__motto">
-      <p class="motto-text">Living, learning, & leveling up</p>
-      <p class="motto-text">one day at a time.</p>
+      <p class="motto-text">
+        Living, learning, & leveling up
+      </p>
+      <p class="motto-text">
+        one day at a time.
+      </p>
     </div>
 
     <div class="footer__social-media">

@@ -2,20 +2,20 @@
   <div class="error">
     <div class="error__monster">
       <div class="container">
-        <div class="monster"></div>
-        <div class="hair"></div>
+        <div class="monster" />
+        <div class="hair" />
         <div class="face">
           <div class="eyes">
-            <div class="iris"></div>
+            <div class="iris" />
           </div>
         </div>
-        <div class="mouth"></div>
-        <div class="drool"></div>
+        <div class="mouth" />
+        <div class="drool" />
         <div class="teeth">
-          <div></div>
-          <div></div>
+          <div />
+          <div />
         </div>
-        <div class="text"></div>
+        <div class="text" />
       </div>
     </div>
     <div class="error__text">

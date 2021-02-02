@@ -12,8 +12,8 @@
         <a
           :id="'navLink' + index"
           :href="link.linkRef"
-          @click="setSelectedNavLink"
           class="link"
+          @click="setSelectedNavLink"
         >
           {{ link.linkName }}
         </a>
@@ -21,8 +21,8 @@
       <div class="link-item">
         <a
           href="#"
-          @click="$refs.contactMe.openModal()"
           class="link"
+          @click="$refs.contactMe.openModal()"
         >
           Contact Me
         </a>
@@ -30,10 +30,10 @@
     </div>
     <font-awesome-icon
       :icon="['fas', toggleMobileNavigation ? 'times' : 'bars']"
-      @click="toggleMobileNavigationMenu(!toggleMobileNavigation)"
       class="navigation-links__mobile-icon"
+      @click="toggleMobileNavigationMenu(!toggleMobileNavigation)"
     />
-    <contact-me ref="contactMe"></contact-me>
+    <contact-me ref="contactMe" />
   </div>
 </template>
 
