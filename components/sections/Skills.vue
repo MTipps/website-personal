@@ -8,6 +8,7 @@
     <div class="skills__cards">
       <app-skill-card
         v-for="techStackItem in techStackItems"
+        :key="techStackItem.techName"
         :skill-title="techStackItem.techName"
         :skill-icon="techStackItem.fontAwesome"
       />

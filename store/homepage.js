@@ -39,7 +39,7 @@ export const mutations = {
 export const actions = {
   getPageItems ({ commit }) {
     contentfulClient.getEntries({
-      'content_type': 'homePage'
+      content_type: 'homePage'
     }).then((page) => {
       if (page) {
         const { techStackHeader, techStackSubHeader, recentWorkHeader, recentWorkSubHeader } = page.items[0].fields
@@ -52,7 +52,6 @@ export const actions = {
         commit('setRecentWorkHeader', recentWorkHeader)
         commit('setRecentWorkSubHeader', recentWorkSubHeader)
 
-        console.log(rawAboutMe)
         commit('setAboutMeText', createAboutMeArray(rawAboutMe))
         commit('setTechStack', createTechStackObjectArray(rawTechStack))
         commit('setRecentWork', createRecentWorkObjectArray(rawRecentWork))
