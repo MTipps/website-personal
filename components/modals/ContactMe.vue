@@ -14,14 +14,31 @@
             @click="closeModal()"
           />
         </div>
-        <div class="contact-me__body">
 
-        </div>
-        <div class="contact-me__footer">
-          <button class="footer-button">
-            Send
-          </button>
-        </div>
+        <form
+          name="contact-me"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact-me" />
+          <div class="contact-me__body">
+            <div>Name: </div>
+            <input type="text" name="name" />
+
+            <div>Email: </div>
+            <input type="email" name="email" />
+
+            <div>Message: </div>
+            <textarea name="message"></textarea>
+          </div>
+
+          <div class="contact-me__footer">
+            <button type="submit" class="footer-button">
+              Send
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </transition>

@@ -1,12 +1,12 @@
 <template>
-  <nuxt-link to="/" class="navigation-my-info">
+  <div class="navigation-my-info">
     <p class="navigation-my-info__name">
       {{ myName }}
     </p>
     <p class="navigation-my-info__title">
       {{ myTitle }}
     </p>
-  </nuxt-link>
+  </div>
 </template>
 
 <script>
@@ -28,7 +28,6 @@ export default {
 <style lang="scss" scoped>
   .navigation-my-info {
     align-self: center;
-    text-decoration: none;
 
     &__name, &__title {
       color: map-get($colours, 'colour-slate-gray');
