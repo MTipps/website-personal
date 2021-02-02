@@ -1,7 +1,5 @@
-import path from 'path'
-import PrerenderSPAPlugin from 'prerender-spa-plugin'
-
 require('dotenv').config()
+
 export default {
   mode: 'universal',
   /*
@@ -39,16 +37,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~plugins/ga.js', mode: 'client' },
-    new PrerenderSPAPlugin(
-      // Absolute path to compiled SPA
-      path.resolve(__dirname, 'dist'),
-      // List of routes to prerender
-      ['/'],
-      {
-        // options
-      }
-    )
+    { src: '~plugins/ga.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
