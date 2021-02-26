@@ -3,10 +3,10 @@ export const state = () => ({
   myTitle: 'Front-End Web Developer',
   logo: 'avatar.svg',
   navigationLinks: [
-    {
-      linkName: 'Home',
-      linkRef: '/'
-    }
+    // {
+    //   linkName: 'Home',
+    //   linkRef: '/'
+    // }
     // {
     //   linkName: 'Blog',
     //   linkRef: '/blog'

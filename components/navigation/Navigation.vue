@@ -8,23 +8,23 @@
 
     <img :src="logo" alt="animated photo of Megan Tipps as a logo" class="navigation__logo">
 
-    <navigation-links
-      :navigation-links="navigationLinks"
-      class="navigation__links"
-    />
+<!--    <navigation-links-->
+<!--      :navigation-links="navigationLinks"-->
+<!--      class="navigation__links"-->
+<!--    />-->
   </nav>
 </template>
 
 <script>
 import { mapState } from 'vuex'
 import NavigationMyInfo from './NavigationMyInfo'
-import NavigationLinks from './NavigationLinks'
+// import NavigationLinks from './NavigationLinks'
 
 export default {
   name: 'Navigation',
   components: {
-    NavigationMyInfo,
-    NavigationLinks
+    NavigationMyInfo
+    // NavigationLinks
   },
   computed: {
     ...mapState('navigation', [
