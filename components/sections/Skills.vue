@@ -8,10 +8,8 @@
     <div class="skills__cards">
       <app-skill-card
         v-for="techStackItem in techStackItems"
+        :key="techStackItem.techName"
         :skill-title="techStackItem.techName"
-        :skill-info="techStackItem.techInfo"
-        :skill-link="techStackItem.techLink"
-        :skill-progress="techStackItem.techProgress"
         :skill-icon="techStackItem.fontAwesome"
       />
     </div>
@@ -24,7 +22,7 @@ import SectionHeading from '~/components/ui/SectionHeading'
 import SkillCard from '~/components/ui/SkillCard'
 
 export default {
-  name: 'skills',
+  name: 'Skills',
   components: {
     appSectionHeading: SectionHeading,
     appSkillCard: SkillCard
@@ -39,10 +37,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .skills {
-    &__cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+.skills {
+  &__cards {
+    @include flexbox;
+    @include flex-justify-content(center);
+    @include flex-align-items(center);
+    @include flex-wrap(wrap);
+    padding: 0 bu(60);
+
+    @include breakpoint(tablet) {
+      padding: 0 bu(60);
     }
   }
+}
 </style>

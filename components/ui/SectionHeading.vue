@@ -30,7 +30,7 @@ export default {
   @include flexbox;
   @include flex-direction(column);
   @include flex-align-items(center);
-  padding: bu(40) bu(20);
+  padding: bu(40) bu(60);
 
   &__header {
     @include font(map-get($fonts, 'pt-sans-narrow'), bu(36), bu(47), bold, map-get($colours, 'colour-tulip-tree'));

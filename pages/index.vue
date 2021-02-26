@@ -1,15 +1,18 @@
 <template>
   <div>
-    <app-about-me />
+    <section-about-me />
+    <section-skills />
   </div>
 </template>
 
 <script>
 import AboutMe from '../components/sections/AboutMe'
+import Skills from '../components/sections/Skills'
 
 export default {
   components: {
-    appAboutMe: AboutMe
+    sectionAboutMe: AboutMe,
+    sectionSkills: Skills
   }
 }
 </script>

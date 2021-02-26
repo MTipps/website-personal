@@ -1,33 +1,30 @@
 <template>
-  <div class="flex flex-col h-screen justify-center">
-    <div class="ghost-container">
-      <div class="ghost-copy">
-        <div class="one" />
-        <div class="two" />
-        <div class="three" />
-        <div class="four" />
-      </div>
-      <div class="ghost">
+  <div class="error">
+    <div class="error__monster">
+      <div class="container">
+        <div class="monster" />
+        <div class="hair" />
         <div class="face">
-          <div class="eye" />
-          <div class="eye-right" />
-          <div class="mouth" />
+          <div class="eyes">
+            <div class="iris" />
+          </div>
         </div>
+        <div class="mouth" />
+        <div class="drool" />
+        <div class="teeth">
+          <div />
+          <div />
+        </div>
+        <div class="text" />
       </div>
-      <div class="shadow" />
     </div>
-    <div class="flex flex-col items-center">
-      <div v-if="error.statusCode === 404">
-        <p class="font-sans font-bold text-4xl text-pink-600">
-          404
-        </p>
-      </div>
-      <p class="font-sans text-center text-lg p-6">
-        It seems I can't find the page you're looking for.
+    <div class="error__text">
+      <p class="text-404">
+        404
       </p>
-      <nuxt-link to="/" class="block w-32 font-sans font-bold text-md text-center text-white bg-pink-600 hover:bg-purple-600 py-4 mt-6 rounded-lg">
-        Return Home
-      </nuxt-link>
+      <p class="text-error">
+        It seems the page could not be found.
+      </p>
     </div>
   </div>
 </template>
@@ -45,139 +42,237 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$white: #EDEDED;
-$gray: #BFC0C0;
-$dark: #585959;
-$light: #D3DEEA;
-
-.ghost-container {
-  margin: 0 auto;
-  position: relative;
-  width: 250px;
-  height: 250px;
+.error {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  padding: bu(20) bu(60);
 }
 
-.ghost {
-  width: 50%;
-  height: 53%;
-  left: 25%;
-  top: 10%;
-  position: absolute;
-  border-radius: 50% 50% 0 0;
-  background: $white;
-  border: 1px solid $gray;
-  border-bottom: none;
-  animation: float 2s ease-out infinite;
+.error__monster,
+.error__text {
+  justify-self: center;
 }
 
-.ghost-copy {
-  width: 50%;
-  height: 53%;
-  left: 25%;
-  top: 10%;
+.error__monster {
+  margin-left: bu(-148);
+}
+
+.container,
+.monster,
+.eyes,
+.iris,
+.mouth,
+.face,
+.text {
   position: absolute;
-  border-radius: 50% 50% 0 0;
-  background: $white;
-  border: 1px solid $gray;
-  border-bottom: none;
-  animation: float 2s ease-out infinite;
-  z-index: 0;
+}
+
+.container {
+  margin: auto;
+  width: bu(200);
+  height: bu(100);
 }
 
 .face {
-  position: absolute;
-  width: 100%;
-  height: 60%;
-  top: 20%;
-}
-.eye,
-.eye-right {
-  position: absolute;
-  background: $dark;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  top: 40%;
+  left: bu(-3);
+  transition: all 0.5s ease;
 }
 
-.eye {
-  left: 25%;
+.monster {
+  width: bu(150);
+  height: bu(150);
+  background: map-get($colours, 'colour-tulip-tree');
+  border-radius: 100%;
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    width: bu(20);
+    height: bu(30);
+    background: map-get($colours, 'colour-tulip-tree');
+  }
+  &:before {
+    left: bu(20);
+    border-radius: 100% 0 0 0;
+  }
+  &:after {
+    left: bu(110);
+    border-radius: 0 100% 0 0;
+  }
 }
-.eye-right {
-  right: 25%;
+
+.hair {
+  position: absolute;
+  top: bu(-2);
+  left: bu(67);
+  width: bu(10);
+  height: bu(10);
+  background: map-get($colours, 'colour-tulip-tree');
+  border-radius: 100% 0 100% 100%;
+  transform: rotate(-20deg);
+
+  &:before{
+    position: absolute;
+    content: '';
+    top: bu(3);
+    left: bu(10);
+    width: bu(10);
+    height: bu(10);
+    background: map-get($colours, 'colour-tulip-tree');
+    border-radius: 100% 0 100% 100%;
+
+  }
+}
+
+.eyes {
+  width: bu(30);
+  height: bu(30);
+  background: map-get($colours, 'colour-merino');
+  top: bu(50);
+  left: bu(30);
+  border-radius: 100%;
+  &:before {
+    position: absolute;
+    content: '';
+    width: bu(30);
+    height: bu(30);
+    background: map-get($colours, 'colour-merino');
+    left: bu(70);
+    border-radius: 100%;
+  }
+}
+
+.iris {
+  width: bu(20);
+  height: bu(20);
+  background: map-get($colours, 'colour-pelorous');
+  border-radius: 100%;
+  top: bu(5);
+  left: bu(7);
+  &:before {
+    position: absolute;
+    content: '';
+    width: bu(20);
+    height: bu(20);
+    background: map-get($colours, 'colour-pelorous');
+    border-radius: 100%;
+    left: bu(66);
+  }
 }
 
 .mouth {
-  position:absolute;
-  top: 50%;
-  left: 45%;
-  width: 10px;
-  height: 10px;
-  border: 3px solid;
-  border-radius: 50%;
-  border-color: transparent $dark $dark transparent;
-  transform: rotate(45deg);
-}
-
-.one,
-.two,
-.three,
-.four {
-  position: absolute;
-  background: $white;
-  top: 85%;
-  width: 25%;
-  height: 23%;
-  border: 1px solid $gray;
-  z-index: 0;
-}
-
-.one {
-  border-radius: 0 0 100% 30%;
-  left: -1px;
-}
-
-.two {
-  left: 23%;
-  border-radius: 0 0 50% 50%;
-}
-
-.three {
-  left: 50%;
-  border-radius: 0 0 50% 50%;
-}
-
-.four {
-  left: 74.5%;
-  border-radius: 0 0 30% 100%;
-}
-
-.shadow {
-  position: absolute;
-  width: 30%;
-  height: 7%;
-  background: $gray;
-  left: 35%;
-  top: 80%;
-  border-radius: 50%;
-  animation: scale 2s infinite;
-}
-
-@keyframes scale {
-  0% {
-    transform: scale(1);
+  overflow: hidden;
+  top: bu(90);
+  left: bu(50);
+  width: bu(60);
+  height: bu(3);
+  background: map-get($colours, 'colour-slate-gray');
+  border-radius: 0 0 100px 100px;
+  transition: all 0.5s ease;
+  &:before {
+    position: absolute;
+    left: bu(17);
+    top: bu(15);
+    content: '';
+    width: bu(50);
+    height: bu(30);
+    background: map-get($colours, 'colour-slate-gray');
+    border-radius: 100%;
   }
-  50% {
-    transform: scale(1.1);
+}
+
+.teeth {
+  position: relative;
+  top: bu(90);
+  left: bu(60);
+  div:nth-child(1) {
+    position: absolute;
+    width: bu(7);
+    height: bu(10);
+    background: map-get($colours, 'colour-merino');
+    border-radius: 0 0 0 100%;
   }
+  div:nth-child(2) {
+    position: absolute;
+    left: bu(30);
+    width: bu(7);
+    height: bu(10);
+    background: map-get($colours, 'colour-merino');
+    border-radius: 0 0 100% 0;
+  }
+}
+
+.monster:hover ~ .mouth {
+  height: bu(30);
+}
+
+.monster:hover ~ .drool {
+  transform: translate(bu(3), bu(20));
+}
+
+.drool {
+  position: absolute;
+  top: bu(90);
+  left: bu(53);
+  width: bu(4);
+  height: bu(25);
+  background: #C5DFEA;
+  border-radius: bu(100);
+  transition: all 0.2s ease;
+  animation: 5s drip infinite ease;
+  &:before {
+    position: absolute;
+    content: '';
+    width: bu(6);
+    height: bu(6);
+    background: #C5DFEA;
+    top: bu(30);
+    left: -1px;
+    border-radius: 0 100% 100% 100%;
+    transform: rotate(40deg);
+    animation: 2s droplet infinite ease;
+  }
+}
+
+.text {
+  background: #C5DFEA - 10;
+  border-radius: 100%;
+  height: bu(20);
+  width: bu(130);
+  top: bu(158);
+  left: bu(16);
+  font-family: sans-serif;
+  font-size: bu(14);
+  letter-spacing: bu(1);
+  box-shadow: bu(3) bu(1) bu(2) #A2B7C0;
+
+}
+
+@keyframes drip {
   100% {
-    transform: scale(1);
+    height: bu(40);
   }
 }
 
-@keyframes float {
-  50% {
-    transform: translateY(15px);
+@keyframes droplet {
+  100% {
+    transform: translateY(bu(33));
+  }
+}
+
+.error__text {
+  text-align: center;
+  padding-top: bu(30);
+
+  .text-404 {
+    @include font(map-get($fonts, 'pt-sans'), bu(30), bu(30), normal);
+    color: map-get($colours, 'colour-slate-gray');
+    margin-bottom: bu(10);
+  }
+
+  .text-error {
+    @include font(map-get($fonts, 'pt-sans'), bu(20), bu(31), normal);
   }
 }
 </style>

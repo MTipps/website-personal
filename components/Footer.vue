@@ -1,21 +1,25 @@
 <template>
   <footer class="footer">
     <div class="footer__motto">
-      <p class="motto-text">Living, learning, & leveling up</p>
-      <p class="motto-text">one day at a time.</p>
+      <p class="motto-text">
+        Living, learning, & leveling up
+      </p>
+      <p class="motto-text">
+        one day at a time.
+      </p>
     </div>
 
     <div class="footer__social-media">
-      <a href="https://www.linkedin.com/in/megantipps/">
+      <a href="https://www.linkedin.com/in/megantipps/" target="_blank">
         <font-awesome-icon :icon="['fab', 'linkedin']" size="2x" class="social-media-icon" />
       </a>
-      <a href="https://github.com/MTipps/">
+      <a href="https://github.com/MTipps/" target="_blank">
         <font-awesome-icon :icon="['fab', 'github']" size="2x" class="social-media-icon" />
       </a>
-      <a href="https://stackoverflow.com/users/6733443/megan">
+      <a href="https://stackoverflow.com/users/6733443/megan" target="_blank">
         <font-awesome-icon :icon="['fab', 'stack-overflow']" size="2x" class="social-media-icon" />
       </a>
-      <a href="https://codepen.io/megantipps">
+      <a href="https://codepen.io/megantipps" target="_blank">
         <font-awesome-icon :icon="['fab', 'codepen']" size="2x" class="social-media-icon" />
       </a>
     </div>

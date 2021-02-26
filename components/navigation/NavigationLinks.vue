@@ -1,7 +1,7 @@
 <template>
   <div class="navigation-links">
     <div
-      :class="toggleMobileNavigation ? 'navigation-open' : 'navigation-closed'"
+      :class="toggleMobileNavigation ? 'navigation-links__open' : 'navigation-links__closed'"
       class="navigation-links__container"
     >
       <div
@@ -12,24 +12,39 @@
         <a
           :id="'navLink' + index"
           :href="link.linkRef"
-          @click="setSelectedNavLink"
           class="link"
+          @click="setSelectedNavLink"
         >
           {{ link.linkName }}
         </a>
       </div>
+      <div class="link-item">
+        <a
+          href="#"
+          class="link"
+          @click="$refs.contactMe.openModal()"
+        >
+          Contact Me
+        </a>
+      </div>
     </div>
-<!--    <font-awesome-icon-->
-<!--      :icon="['fas', 'bars']"-->
-<!--      @click="toggleMobileNavigationMenu(!toggleMobileNavigation)"-->
-<!--      class="navigation-links__mobile-icon"-->
-<!--    />-->
+    <font-awesome-icon
+      :icon="['fas', toggleMobileNavigation ? 'times' : 'bars']"
+      class="navigation-links__mobile-icon"
+      @click="toggleMobileNavigationMenu(!toggleMobileNavigation)"
+    />
+    <contact-me ref="contactMe" />
   </div>
 </template>
 
 <script>
+import ContactMe from '~/components/modals/ContactMe'
+
 export default {
   name: 'NavigationLinks',
+  components: {
+    ContactMe
+  },
   props: {
     navigationLinks: {
       type: Array,
@@ -42,16 +57,13 @@ export default {
     }
   },
   mounted () {
-    const urlHash = window.location.hash
     const pathName = window.location.pathname
     let navigationQuerySelector
 
-    if (urlHash === '') {
-      navigationQuerySelector = '.link'
-    } else if (pathName === '/blog') {
-      navigationQuerySelector = ".link[href='/" + pathName + "']"
+    if (pathName === '/') {
+      navigationQuerySelector = ".link[href='/']"
     } else {
-      navigationQuerySelector = ".link[href='/" + urlHash + "']"
+      navigationQuerySelector = ".link[href='" + pathName + "']"
     }
 
     const navigationItem = document.querySelectorAll(navigationQuerySelector)[0]
@@ -69,19 +81,9 @@ export default {
     },
     toggleMobileNavigationMenu (toggleValue) {
       this.toggleMobileNavigation = toggleValue
-      this.setBodyScroll()
-    },
-    setBodyScroll () {
-      const bodyElement = document.querySelectorAll('body')[0]
-
-      if (this.toggleMobileNavigation) {
-        bodyElement.style.overflowY = 'hidden'
-      } else {
-        bodyElement.style.overflowY = 'scroll'
-      }
     },
     onWindowResize () {
-      if (window.innerWidth >= 768 && this.toggleMobileNavigation === true) {
+      if (window.innerWidth >= 1280 && this.toggleMobileNavigation === true) {
         this.toggleMobileNavigationMenu(false)
       }
     }
@@ -95,28 +97,78 @@ export default {
     justify-self: end;
 
     &__container {
-      @include flexbox;
-
       .link-item {
-        @include font(map-get($fonts, 'pt-sans-narrow'), bu(16), bu(21), bold);
+        @include font(map-get($fonts, 'pt-sans-narrow'), bu(20), bu(20), bold);
         text-transform: uppercase;
-        margin-left: bu(25);
+        margin: bu(5) bu(60);
+        height: 28px;
+
+        @include breakpoint(desktop) {
+          @include font(map-get($fonts, 'pt-sans-narrow'), bu(16), bu(21), bold);
+          margin: 0 0 0 bu(25);
+          height: auto;
+        }
 
         .link {
           color: map-get($colours, 'colour-slate-gray');
           text-decoration: none;
           padding: bu(4) bu(10);
+          outline: none;
 
           &:hover {
+            display: block;
+            width: 100%;
             border-radius: bu(4);
-            background-color: map-get($colours, 'colour-red-ribbon');
+            background-color: map-get($colours, 'colour-tulip-tree');
             color: map-get($colours, 'colour-merino');
+
+            @include breakpoint(desktop) {
+              display: initial;
+            }
           }
 
           &[active] {
-            border-bottom: bu(2) solid map-get($colours, 'colour-red-ribbon');
+            display: block;
+            width: 100%;
+            border-radius: bu(4);
+            color: map-get($colours, 'colour-merino');
+            background-color: map-get($colours, 'colour-tulip-tree');
+
+            @include breakpoint(desktop) {
+              display: initial;
+              border-radius: 0;
+              color: map-get($colours, 'colour-slate-gray');
+              background-color: transparent;
+              border-bottom: bu(2) solid map-get($colours, 'colour-tulip-tree');
+            }
           }
         }
+      }
+    }
+
+    &__mobile-icon {
+      display: block;
+      cursor: pointer;
+
+      @include breakpoint(desktop) {
+        display: none;
+      }
+    }
+
+    &__open {
+      position: absolute;
+      top: bu(114);
+      left: 0;
+      background-color: map-get($colours, 'colour-merino');
+      height: 100vh;
+      width: 100%;
+    }
+
+    &__closed {
+      display: none;
+
+      @include breakpoint(desktop) {
+        display: flex;
       }
     }
   }
